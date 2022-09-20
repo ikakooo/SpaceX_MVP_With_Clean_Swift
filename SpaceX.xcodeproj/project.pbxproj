@@ -20,6 +20,13 @@
 		3BA00E5028DA2C55009A1C78 /* ShipsSlideShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA00E4E28DA2C55009A1C78 /* ShipsSlideShowViewController.xib */; };
 		3BA00E5428DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E5228DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.swift */; };
 		3BA00E5528DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA00E5328DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.xib */; };
+		3BA00E5728DA49EB009A1C78 /* ShipsSlideShowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E5628DA49EB009A1C78 /* ShipsSlideShowPresenter.swift */; };
+		3BA00E5928DA4A34009A1C78 /* ShipsSlideShowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E5828DA4A34009A1C78 /* ShipsSlideShowRouter.swift */; };
+		3BA00E5B28DA4A56009A1C78 /* ShipsSlideShowConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E5A28DA4A56009A1C78 /* ShipsSlideShowConfigurator.swift */; };
+		3BA00E5E28DA6BBC009A1C78 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E5D28DA6BBC009A1C78 /* Constants.swift */; };
+		3BA00E6028DA6D23009A1C78 /* AllShipsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E5F28DA6D23009A1C78 /* AllShipsGateway.swift */; };
+		3BA00E6228DA6E45009A1C78 /* AllShipsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E6128DA6E45009A1C78 /* AllShipsModel.swift */; };
+		3BA00E6428DA71F5009A1C78 /* AllShipsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E6328DA71F5009A1C78 /* AllShipsUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +64,13 @@
 		3BA00E4E28DA2C55009A1C78 /* ShipsSlideShowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShipsSlideShowViewController.xib; sourceTree = "<group>"; };
 		3BA00E5228DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipLaunchesAndMissionsViewController.swift; sourceTree = "<group>"; };
 		3BA00E5328DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShipLaunchesAndMissionsViewController.xib; sourceTree = "<group>"; };
+		3BA00E5628DA49EB009A1C78 /* ShipsSlideShowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipsSlideShowPresenter.swift; sourceTree = "<group>"; };
+		3BA00E5828DA4A34009A1C78 /* ShipsSlideShowRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipsSlideShowRouter.swift; sourceTree = "<group>"; };
+		3BA00E5A28DA4A56009A1C78 /* ShipsSlideShowConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipsSlideShowConfigurator.swift; sourceTree = "<group>"; };
+		3BA00E5D28DA6BBC009A1C78 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3BA00E5F28DA6D23009A1C78 /* AllShipsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllShipsGateway.swift; sourceTree = "<group>"; };
+		3BA00E6128DA6E45009A1C78 /* AllShipsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllShipsModel.swift; sourceTree = "<group>"; };
+		3BA00E6328DA71F5009A1C78 /* AllShipsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllShipsUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +165,7 @@
 		3BA00E4128D9971C009A1C78 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				3BA00E5C28DA6BA5009A1C78 /* Constants */,
 				3BA00E4B28D99911009A1C78 /* Api */,
 				3BA00E4A28D99906009A1C78 /* LocalPersistence */,
 			);
@@ -181,6 +196,7 @@
 		3BA00E4428D99785009A1C78 /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
+				3BA00E5F28DA6D23009A1C78 /* AllShipsGateway.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -188,6 +204,7 @@
 		3BA00E4528D99792009A1C78 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				3BA00E6328DA71F5009A1C78 /* AllShipsUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -195,6 +212,7 @@
 		3BA00E4628D9979E009A1C78 /* ApiEntities */ = {
 			isa = PBXGroup;
 			children = (
+				3BA00E6128DA6E45009A1C78 /* AllShipsModel.swift */,
 			);
 			path = ApiEntities;
 			sourceTree = "<group>";
@@ -228,8 +246,11 @@
 		3BA00E4C28DA2BD4009A1C78 /* ShipsSlideShow */ = {
 			isa = PBXGroup;
 			children = (
-				3BA00E4D28DA2C55009A1C78 /* ShipsSlideShowViewController.swift */,
 				3BA00E4E28DA2C55009A1C78 /* ShipsSlideShowViewController.xib */,
+				3BA00E4D28DA2C55009A1C78 /* ShipsSlideShowViewController.swift */,
+				3BA00E5628DA49EB009A1C78 /* ShipsSlideShowPresenter.swift */,
+				3BA00E5828DA4A34009A1C78 /* ShipsSlideShowRouter.swift */,
+				3BA00E5A28DA4A56009A1C78 /* ShipsSlideShowConfigurator.swift */,
 			);
 			path = ShipsSlideShow;
 			sourceTree = "<group>";
@@ -241,6 +262,14 @@
 				3BA00E5328DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.xib */,
 			);
 			path = ShipLaunchesAndMissions;
+			sourceTree = "<group>";
+		};
+		3BA00E5C28DA6BA5009A1C78 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				3BA00E5D28DA6BBC009A1C78 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,9 +407,16 @@
 				3BA00E5428DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.swift in Sources */,
 				3BA00E0D28D992C2009A1C78 /* AppDelegate.swift in Sources */,
 				3BA00E0F28D992C2009A1C78 /* SceneDelegate.swift in Sources */,
+				3BA00E6228DA6E45009A1C78 /* AllShipsModel.swift in Sources */,
 				3BA00E4F28DA2C55009A1C78 /* ShipsSlideShowViewController.swift in Sources */,
+				3BA00E6028DA6D23009A1C78 /* AllShipsGateway.swift in Sources */,
 				3BA00E4928D997CF009A1C78 /* Fetcher.swift in Sources */,
+				3BA00E5E28DA6BBC009A1C78 /* Constants.swift in Sources */,
 				3BA00E1728D992C2009A1C78 /* SpaceX.xcdatamodeld in Sources */,
+				3BA00E5728DA49EB009A1C78 /* ShipsSlideShowPresenter.swift in Sources */,
+				3BA00E5B28DA4A56009A1C78 /* ShipsSlideShowConfigurator.swift in Sources */,
+				3BA00E6428DA71F5009A1C78 /* AllShipsUseCase.swift in Sources */,
+				3BA00E5928DA4A34009A1C78 /* ShipsSlideShowRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,8 @@ import UIKit
 
 class ShipsSlideShowViewController: UIViewController {
     
+    var presenter: ShipsSlideShowPresenter!
+    
     // MARK: - Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -24,14 +26,31 @@ class ShipsSlideShowViewController: UIViewController {
     // MARK: - Setup
 
     private func setupCleanSwift() {
-
-    }
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view. 
+        let configurator = ShipsSlideShowConfiguratorImpl()
+        configurator.configure(self)
     }
 
 }
+
+
+// MARK: UIViewController Lifecycle
+extension ShipsSlideShowViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presenter.viewDidLoad()
+    }
+    
+}
+
+
+// MARK: View Protocol Conformation
+extension ShipsSlideShowViewController: ShipsSlideShowView {
+    
+    func reloadList() {
+        DispatchQueue.main.async {
+        }
+    }
+    
+}
+

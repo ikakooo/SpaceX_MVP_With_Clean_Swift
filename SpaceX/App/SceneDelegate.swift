@@ -17,8 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         self.window = window
-        let weatherController = ShipsSlideShowViewController()
-        window.rootViewController = UINavigationController(rootViewController: weatherController)
+        window.rootViewController = UINavigationController(rootViewController: ShipsSlideShowViewController())
         window.makeKeyAndVisible()
     }
 
