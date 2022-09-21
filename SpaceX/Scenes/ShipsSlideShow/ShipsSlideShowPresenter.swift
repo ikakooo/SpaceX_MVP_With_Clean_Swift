@@ -15,15 +15,37 @@ protocol ShipsSlideShowPresenter {
     func viewDidLoad()
     var numberOfSections: Int { get }
     func numberOfRows(in section: Int) -> Int
-    func headerIdentifier(of section: Int) -> String
     func rowIdentifier(at indexPath: IndexPath) -> String
+    func configure(row: ConfigurableCell, at indexPath: IndexPath)
 }
 
-final class ShipsSlideShowPresenterImpl: ShipsSlideShowPresenter {
+final class ShipsSlideShowPresenterImpl: NSObject, ShipsSlideShowPresenter {
+    
     
     private weak var view: ShipsSlideShowView?
     private var router: ShipsSlideShowRouter
     private let allShipsUseCase: AllShipsUseCase
+    
+    var allShips: [AllShipsModelElement] = [] {
+        didSet {
+            view?.reloadList()
+        }
+    }
+    
+    private var listDataSource: [SectionModel] {
+        return [
+            ShipSections
+        ]
+    }
+    
+    private var ShipSections: SectionModel {
+        let shipsCells = allShips.map { shipModel in ShipSlideCell.ViewModel(ship: shipModel)}
+        
+        return SectionModel(
+            headerModel: nil,
+            cellModels: shipsCells
+        )
+    }
     
     init(
         view: ShipsSlideShowView,
@@ -40,6 +62,7 @@ final class ShipsSlideShowPresenterImpl: ShipsSlideShowPresenter {
             guard let self = self else { return }
             switch result {
             case .success(let allShips):
+                self.allShips = allShips
                 print(allShips)
             case .failure(let error):
                 print(error)
@@ -48,22 +71,24 @@ final class ShipsSlideShowPresenterImpl: ShipsSlideShowPresenter {
         }
     }
     
+}
+
+extension ShipsSlideShowPresenterImpl {
+    
     var numberOfSections: Int {
-        1
+        return listDataSource.count
     }
-    
+
     func numberOfRows(in section: Int) -> Int {
-        return 3
+        return listDataSource[section].cellModels.count
     }
-    
-    func headerIdentifier(of section: Int) -> String {
-        return ""
-    }
-    
+
     func rowIdentifier(at indexPath: IndexPath) -> String {
-        return ""
+        return listDataSource[indexPath.section].cellModels[indexPath.row].cellIdentifier
     }
-    
-    
+
+    func configure(row: ConfigurableCell, at indexPath: IndexPath) {
+        row.configure(with: listDataSource[indexPath.section].cellModels[indexPath.row])
+    }
     
 }

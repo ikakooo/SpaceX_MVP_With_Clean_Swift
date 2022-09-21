@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ShipSlideCell" customModule="SpaceX" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="500"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="350" height="500"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shj-z4-Fc1" userLabel="ContentView">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="500"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ship Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="922-LW-qXK">
+                                <rect key="frame" x="24" y="0.0" width="302" height="32"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="641-sw-W7u">
+                                <rect key="frame" x="24" y="32" width="302" height="2"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="i2i-5W-Jen"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KXW-si-bAD">
+                                <rect key="frame" x="24" y="50" width="302" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="yuY-jd-r70"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ship type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRX-gz-LHV">
+                                <rect key="frame" x="24" y="386" width="302" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ship Port" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQf-v8-Wsp">
+                                <rect key="frame" x="24" y="437" width="302" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="641-sw-W7u" firstAttribute="top" secondItem="922-LW-qXK" secondAttribute="bottom" id="1oE-x3-axJ"/>
+                            <constraint firstItem="KXW-si-bAD" firstAttribute="leading" secondItem="shj-z4-Fc1" secondAttribute="leading" constant="24" id="7zu-IM-YoW"/>
+                            <constraint firstItem="BQf-v8-Wsp" firstAttribute="top" secondItem="DRX-gz-LHV" secondAttribute="bottom" constant="30" id="Gxp-k1-crQ"/>
+                            <constraint firstItem="BQf-v8-Wsp" firstAttribute="leading" secondItem="DRX-gz-LHV" secondAttribute="leading" id="Jki-vY-Cjm"/>
+                            <constraint firstItem="922-LW-qXK" firstAttribute="leading" secondItem="shj-z4-Fc1" secondAttribute="leading" constant="24" id="KRY-5p-qkf"/>
+                            <constraint firstAttribute="trailing" secondItem="641-sw-W7u" secondAttribute="trailing" constant="24" id="TRe-1r-MhM"/>
+                            <constraint firstItem="BQf-v8-Wsp" firstAttribute="trailing" secondItem="DRX-gz-LHV" secondAttribute="trailing" id="YF9-4d-7CB"/>
+                            <constraint firstAttribute="height" constant="500" id="aF1-hu-ygM"/>
+                            <constraint firstItem="641-sw-W7u" firstAttribute="leading" secondItem="shj-z4-Fc1" secondAttribute="leading" constant="24" id="aqY-R1-tUz"/>
+                            <constraint firstAttribute="width" constant="350" id="cdE-s4-kxu"/>
+                            <constraint firstItem="KXW-si-bAD" firstAttribute="top" secondItem="641-sw-W7u" secondAttribute="bottom" constant="16" id="eY5-y1-fn4"/>
+                            <constraint firstAttribute="trailing" secondItem="922-LW-qXK" secondAttribute="trailing" constant="24" id="lSR-Ts-Exm"/>
+                            <constraint firstItem="DRX-gz-LHV" firstAttribute="leading" secondItem="shj-z4-Fc1" secondAttribute="leading" constant="24" id="sPQ-U8-M6u"/>
+                            <constraint firstAttribute="trailing" secondItem="KXW-si-bAD" secondAttribute="trailing" constant="24" id="t6t-V1-MGV"/>
+                            <constraint firstItem="922-LW-qXK" firstAttribute="top" secondItem="shj-z4-Fc1" secondAttribute="top" id="tO4-5r-pCh"/>
+                            <constraint firstAttribute="trailing" secondItem="DRX-gz-LHV" secondAttribute="trailing" constant="24" id="uLM-cu-qTV"/>
+                            <constraint firstItem="DRX-gz-LHV" firstAttribute="top" secondItem="KXW-si-bAD" secondAttribute="bottom" constant="36" id="xaE-91-TS1"/>
+                            <constraint firstAttribute="bottom" secondItem="BQf-v8-Wsp" secondAttribute="bottom" priority="250" constant="40" id="zvY-wX-IPB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="shj-z4-Fc1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="M4c-5W-rgK"/>
+                <constraint firstAttribute="trailing" secondItem="shj-z4-Fc1" secondAttribute="trailing" id="q2l-GP-RLL"/>
+                <constraint firstAttribute="bottom" secondItem="shj-z4-Fc1" secondAttribute="bottom" id="quQ-t9-xeV"/>
+                <constraint firstItem="shj-z4-Fc1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ryt-CQ-Yrr"/>
+            </constraints>
+            <size key="customSize" width="350" height="500"/>
+            <connections>
+                <outlet property="shipImage" destination="KXW-si-bAD" id="hmO-PJ-cT5"/>
+                <outlet property="shipNameLabel" destination="922-LW-qXK" id="ejr-9A-fi4"/>
+                <outlet property="shipPortLabel" destination="BQf-v8-Wsp" id="6sR-MR-tZT"/>
+                <outlet property="shipTypeLabel" destination="DRX-gz-LHV" id="De6-mp-Zea"/>
+            </connections>
+            <point key="canvasLocation" x="355.07246376811599" y="238.39285714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -11,6 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShipsSlideShowViewController" customModule="SpaceX" customModuleProvider="target">
             <connections>
+                <outlet property="playPauseButton" destination="hca-HF-bdJ" id="Cn0-ig-i9S"/>
+                <outlet property="restartButton" destination="ApI-7j-l0r" id="mzz-6n-qyo"/>
+                <outlet property="slideShowCollectionView" destination="nvX-pb-iLJ" id="hSg-p9-4ta"/>
+                <outlet property="speedLabel" destination="x46-n6-eWR" id="K1X-Dj-Gmx"/>
+                <outlet property="speedSlider" destination="gG6-q8-0Fl" id="Eip-yt-QwA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -54,7 +59,7 @@
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="nvX-pb-iLJ">
                     <rect key="frame" x="0.0" y="44" width="414" height="717.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BiV-cB-D9M">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BiV-cB-D9M">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
