@@ -34,11 +34,11 @@ final class ShipsSlideShowPresenterImpl: NSObject, ShipsSlideShowPresenter {
     
     private var listDataSource: [SectionModel] {
         return [
-            ShipSections
+            shipSections
         ]
     }
     
-    private var ShipSections: SectionModel {
+    private var shipSections: SectionModel {
         let shipsCells = allShips.map { shipModel in ShipSlideCell.ViewModel(ship: shipModel)}
         
         return SectionModel(

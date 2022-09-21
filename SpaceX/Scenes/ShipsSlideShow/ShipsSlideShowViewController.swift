@@ -65,7 +65,7 @@ class ShipsSlideShowViewController: UIViewController {
              self.slideShowCollectionView?.contentOffset.x = 0
         })
         speedLabel.text = "Speed: \(String(format: "%.1f", 1.0)) X"
-        startTimer(speed: 1 )
+        if isPlaying { startTimer(speed: 1 ) }
         speedSlider.value = 1.0
     }
     
@@ -81,6 +81,22 @@ extension ShipsSlideShowViewController {
         presenter.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let speed = UDManager.shared.getSpeed()
+        
+        if isPlaying {
+            speedLabel.text = "Speed: \(String(format: "%.1f", speed)) X"
+            speedSlider.value = speed
+            startTimer(speed: speed)
+        }else {
+            speedLabel.text = "Speed: \(String(format: "%.1f", speed)) X"
+            speedSlider.value = speed
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        stopTimer()
+    }
 }
 
 
@@ -90,7 +106,6 @@ extension ShipsSlideShowViewController: ShipsSlideShowView {
     func reloadList() {
         DispatchQueue.main.async {
             self.slideShowCollectionView.reloadData()
-            self.startTimer(speed: 5)
         }
     }
     
@@ -164,5 +179,6 @@ extension ShipsSlideShowViewController {
         timer = nil
         isPlaying = false
         playPauseButton.setImage(UIImage(systemName: "play"), for: .normal)
+        UDManager.shared.save(speed: speedSlider.value)
     }
 }
