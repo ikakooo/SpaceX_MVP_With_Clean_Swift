@@ -12,6 +12,7 @@ class ShipSlideCell: UICollectionViewCell {
     @IBOutlet private weak var shipImage: UIImageView!
     @IBOutlet private weak var shipTypeLabel: UILabel!
     @IBOutlet private weak var shipPortLabel: UILabel!
+    @IBOutlet private weak var cellContentView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +29,10 @@ extension ShipSlideCell: ConfigurableCell {
         shipNameLabel.text = model.ship.shipName
         shipTypeLabel.text = model.ship.shipType?.rawValue
         shipPortLabel.text = model.ship.homePort?.rawValue
-        shipImage.loadFrom(URLAddress: model.ship.image ?? Constants.placeholderIMG) 
+        shipImage.loadFrom(URLAddress: model.ship.image ?? Constants.placeholderIMG)
+        shipImage.cornerRadiuse(point: 10 )
+        cellContentView.cornerRadiuse(point: 20 )
+        cellContentView.dropShadow()
     }
     
 }

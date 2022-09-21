@@ -36,6 +36,9 @@
                             <buttonConfiguration key="configuration" style="plain">
                                 <imageReference key="image" image="repeat" catalog="system" symbolScale="large"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="restartButtonTapAction:" destination="-1" eventType="touchUpInside" id="bh7-Tw-Cdc"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hca-HF-bdJ">
                             <rect key="frame" x="227" y="0.0" width="187" height="50"/>
@@ -44,13 +47,19 @@
                             </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="play" catalog="system"/>
+                            <connections>
+                                <action selector="playPauseButtonTapAction:" destination="-1" eventType="touchUpInside" id="siS-if-doR"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>
-                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gG6-q8-0Fl">
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="gG6-q8-0Fl">
                     <rect key="frame" x="22" y="782" width="370" height="31"/>
+                    <connections>
+                        <action selector="speedSliderValueChange:" destination="-1" eventType="valueChanged" id="LXc-jB-tq7"/>
+                    </connections>
                 </slider>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed: 3.5 X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x46-n6-eWR">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed: 1.0 X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x46-n6-eWR">
                     <rect key="frame" x="24" y="761.5" width="366" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>

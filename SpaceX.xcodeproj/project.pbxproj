@@ -33,6 +33,7 @@
 		3BC1FDAC28DAFD7A0041A2AE /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC1FDAB28DAFD7A0041A2AE /* UICollectionViewCell+Extension.swift */; };
 		3BC1FDAE28DAFEC30041A2AE /* CellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC1FDAD28DAFEC30041A2AE /* CellConfiguration.swift */; };
 		3BC1FDB028DB1BBA0041A2AE /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC1FDAF28DB1BBA0041A2AE /* UIImageView+Extensions.swift */; };
+		3BC1FDB228DB43BC0041A2AE /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC1FDB128DB43BC0041A2AE /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		3BC1FDAB28DAFD7A0041A2AE /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
 		3BC1FDAD28DAFEC30041A2AE /* CellConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfiguration.swift; sourceTree = "<group>"; };
 		3BC1FDAF28DB1BBA0041A2AE /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		3BC1FDB128DB43BC0041A2AE /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +304,7 @@
 				3BC1FDA928DAFD2A0041A2AE /* UICollectionView+Extension.swift */,
 				3BC1FDAB28DAFD7A0041A2AE /* UICollectionViewCell+Extension.swift */,
 				3BC1FDAF28DB1BBA0041A2AE /* UIImageView+Extensions.swift */,
+				3BC1FDB128DB43BC0041A2AE /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				3BA00E5E28DA6BBC009A1C78 /* Constants.swift in Sources */,
 				3BC1FDAE28DAFEC30041A2AE /* CellConfiguration.swift in Sources */,
 				3BA00E1728D992C2009A1C78 /* SpaceX.xcdatamodeld in Sources */,
+				3BC1FDB228DB43BC0041A2AE /* UIView+Extensions.swift in Sources */,
 				3BC1FDB028DB1BBA0041A2AE /* UIImageView+Extensions.swift in Sources */,
 				3BA00E5728DA49EB009A1C78 /* ShipsSlideShowPresenter.swift in Sources */,
 				3BC1FDAC28DAFD7A0041A2AE /* UICollectionViewCell+Extension.swift in Sources */,
