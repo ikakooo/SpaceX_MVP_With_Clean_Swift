@@ -17,11 +17,11 @@ protocol ShipsSlideShowPresenter {
     func numberOfRows(in section: Int) -> Int
     func rowIdentifier(at indexPath: IndexPath) -> String
     func configure(row: ConfigurableCell, at indexPath: IndexPath)
+    func didTapItem(at indePath: IndexPath)
 }
 
 final class ShipsSlideShowPresenterImpl: NSObject, ShipsSlideShowPresenter {
-    
-    
+        
     private weak var view: ShipsSlideShowView?
     private var router: ShipsSlideShowRouter
     private let allShipsUseCase: AllShipsUseCase
@@ -69,6 +69,10 @@ final class ShipsSlideShowPresenterImpl: NSObject, ShipsSlideShowPresenter {
             }
             
         }
+    }
+    
+    func didTapItem(at indePath: IndexPath) {
+        router.shipLaunchesAndMissionsPage(of: allShips[indePath.row])
     }
     
 }

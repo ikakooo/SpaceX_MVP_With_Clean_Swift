@@ -8,22 +8,30 @@
 import UIKit
 
 class ShipLaunchesAndMissionsViewController: UIViewController {
+    
+    var ship: AllShipsModelElement?
+    var presenter: ShipLaunchesAndMissionsPresenter!
+    
+    // MARK: - Object lifecycle
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setupCleanSwift()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupCleanSwift()
+    }
+
+    // MARK: - Setup ShipLaunchesAndMissionsPresenter
+
+    private func setupCleanSwift() {
+     
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        title = ship?.shipName
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

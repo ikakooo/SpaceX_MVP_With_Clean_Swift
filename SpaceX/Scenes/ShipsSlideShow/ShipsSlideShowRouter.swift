@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ShipsSlideShowRouter {
-    func navigateToDetailsPage(of city: String)
+    func shipLaunchesAndMissionsPage(of ship: AllShipsModelElement)
 }
 
 class ShipsSlideShowRouterImpl: ShipsSlideShowRouter {
@@ -20,10 +20,9 @@ class ShipsSlideShowRouterImpl: ShipsSlideShowRouter {
         self.controller = controller
     }
     
-    func navigateToDetailsPage(of city: String) {
-        let vc = UIViewController()
-        vc.title = "\(city)"
-        vc.view.backgroundColor = .white
+    func shipLaunchesAndMissionsPage(of ship: AllShipsModelElement) {
+        let vc = ShipLaunchesAndMissionsViewController()
+        vc.ship = ship
         controller?.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -126,6 +126,9 @@ extension ShipsSlideShowViewController: UICollectionViewDelegate, UICollectionVi
         presenter.configure(row: cell, at: indexPath)
         return dequeued
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.didTapItem(at: indexPath)
+    }
 }
 
 extension ShipsSlideShowViewController: UICollectionViewDelegateFlowLayout {

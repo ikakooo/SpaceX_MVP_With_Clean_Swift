@@ -35,6 +35,9 @@
 		3BC1FDB028DB1BBA0041A2AE /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC1FDAF28DB1BBA0041A2AE /* UIImageView+Extensions.swift */; };
 		3BC1FDB228DB43BC0041A2AE /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC1FDB128DB43BC0041A2AE /* UIView+Extensions.swift */; };
 		3BC1FDB428DB4CD90041A2AE /* UDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC1FDB328DB4CD90041A2AE /* UDManager.swift */; };
+		3BC1FDB628DB8BD60041A2AE /* ShipLaunchesAndMissionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC1FDB528DB8BD60041A2AE /* ShipLaunchesAndMissionsConfigurator.swift */; };
+		3BC1FDB828DB8BFD0041A2AE /* ShipLaunchesAndMissionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC1FDB728DB8BFD0041A2AE /* ShipLaunchesAndMissionsRouter.swift */; };
+		3BC1FDBA28DB8C240041A2AE /* ShipLaunchesAndMissionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC1FDB928DB8C240041A2AE /* ShipLaunchesAndMissionsPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		3BC1FDAF28DB1BBA0041A2AE /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		3BC1FDB128DB43BC0041A2AE /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		3BC1FDB328DB4CD90041A2AE /* UDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDManager.swift; sourceTree = "<group>"; };
+		3BC1FDB528DB8BD60041A2AE /* ShipLaunchesAndMissionsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipLaunchesAndMissionsConfigurator.swift; sourceTree = "<group>"; };
+		3BC1FDB728DB8BFD0041A2AE /* ShipLaunchesAndMissionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipLaunchesAndMissionsRouter.swift; sourceTree = "<group>"; };
+		3BC1FDB928DB8C240041A2AE /* ShipLaunchesAndMissionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipLaunchesAndMissionsPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +286,9 @@
 			children = (
 				3BA00E5228DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.swift */,
 				3BA00E5328DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.xib */,
+				3BC1FDB928DB8C240041A2AE /* ShipLaunchesAndMissionsPresenter.swift */,
+				3BC1FDB728DB8BFD0041A2AE /* ShipLaunchesAndMissionsRouter.swift */,
+				3BC1FDB528DB8BD60041A2AE /* ShipLaunchesAndMissionsConfigurator.swift */,
 			);
 			path = ShipLaunchesAndMissions;
 			sourceTree = "<group>";
@@ -450,6 +459,7 @@
 				3BA00E0F28D992C2009A1C78 /* SceneDelegate.swift in Sources */,
 				3BC1FDA628DAF50A0041A2AE /* ShipSlideCell.swift in Sources */,
 				3BA00E6228DA6E45009A1C78 /* AllShipsModel.swift in Sources */,
+				3BC1FDBA28DB8C240041A2AE /* ShipLaunchesAndMissionsPresenter.swift in Sources */,
 				3BA00E4F28DA2C55009A1C78 /* ShipsSlideShowViewController.swift in Sources */,
 				3BC1FDAA28DAFD2A0041A2AE /* UICollectionView+Extension.swift in Sources */,
 				3BA00E6028DA6D23009A1C78 /* AllShipsGateway.swift in Sources */,
@@ -461,10 +471,12 @@
 				3BC1FDB028DB1BBA0041A2AE /* UIImageView+Extensions.swift in Sources */,
 				3BA00E5728DA49EB009A1C78 /* ShipsSlideShowPresenter.swift in Sources */,
 				3BC1FDAC28DAFD7A0041A2AE /* UICollectionViewCell+Extension.swift in Sources */,
+				3BC1FDB828DB8BFD0041A2AE /* ShipLaunchesAndMissionsRouter.swift in Sources */,
 				3BA00E5B28DA4A56009A1C78 /* ShipsSlideShowConfigurator.swift in Sources */,
 				3BA00E6428DA71F5009A1C78 /* AllShipsUseCase.swift in Sources */,
 				3BC1FDB428DB4CD90041A2AE /* UDManager.swift in Sources */,
 				3BA00E5928DA4A34009A1C78 /* ShipsSlideShowRouter.swift in Sources */,
+				3BC1FDB628DB8BD60041A2AE /* ShipLaunchesAndMissionsConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
