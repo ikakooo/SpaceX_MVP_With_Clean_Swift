@@ -88,7 +88,7 @@ extension ShipsSlideShowViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let speed = UDManager.shared.getSpeed()
+        let speed = UDManager.shared.getSpeed() < 1.0 ? 1.0 : UDManager.shared.getSpeed()
         
         if isPlaying {
             speedLabel.text = "Speed: \(String(format: "%.1f", speed)) X"
@@ -112,7 +112,6 @@ extension ShipsSlideShowViewController: ShipsSlideShowView {
     func reloadList() {
         DispatchQueue.main.async { [weak self] in
             self?.slideShowCollectionView.reloadData()
-            let dfgdf = self?.presenter.numberOfRows(in: 0)
             self?.pageControler.numberOfItems = self?.presenter.numberOfRows(in: 0) ?? 0
         }
     }
