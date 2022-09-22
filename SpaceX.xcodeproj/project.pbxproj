@@ -27,6 +27,7 @@
 		3BA00E6028DA6D23009A1C78 /* AllShipsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E5F28DA6D23009A1C78 /* AllShipsGateway.swift */; };
 		3BA00E6228DA6E45009A1C78 /* AllShipsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E6128DA6E45009A1C78 /* AllShipsModel.swift */; };
 		3BA00E6428DA71F5009A1C78 /* AllShipsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E6328DA71F5009A1C78 /* AllShipsUseCase.swift */; };
+		3BBA529528DC52B100B1F8B6 /* CustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA529428DC52B100B1F8B6 /* CustomPageControl.swift */; };
 		3BC1FDA628DAF50A0041A2AE /* ShipSlideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC1FDA428DAF50A0041A2AE /* ShipSlideCell.swift */; };
 		3BC1FDA728DAF50A0041A2AE /* ShipSlideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BC1FDA528DAF50A0041A2AE /* ShipSlideCell.xib */; };
 		3BC1FDAA28DAFD2A0041A2AE /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC1FDA928DAFD2A0041A2AE /* UICollectionView+Extension.swift */; };
@@ -82,6 +83,7 @@
 		3BA00E5F28DA6D23009A1C78 /* AllShipsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllShipsGateway.swift; sourceTree = "<group>"; };
 		3BA00E6128DA6E45009A1C78 /* AllShipsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllShipsModel.swift; sourceTree = "<group>"; };
 		3BA00E6328DA71F5009A1C78 /* AllShipsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllShipsUseCase.swift; sourceTree = "<group>"; };
+		3BBA529428DC52B100B1F8B6 /* CustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
 		3BC1FDA428DAF50A0041A2AE /* ShipSlideCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSlideCell.swift; sourceTree = "<group>"; };
 		3BC1FDA528DAF50A0041A2AE /* ShipSlideCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShipSlideCell.xib; sourceTree = "<group>"; };
 		3BC1FDA928DAFD2A0041A2AE /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				3BC1FDA828DAFD150041A2AE /* Extensions */,
 				3BA00E4028D9970F009A1C78 /* Network */,
 				3BC1FDAD28DAFEC30041A2AE /* CellConfiguration.swift */,
+				3BBA529428DC52B100B1F8B6 /* CustomPageControl.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				3BA00E6028DA6D23009A1C78 /* AllShipsGateway.swift in Sources */,
 				3BA00E4928D997CF009A1C78 /* Fetcher.swift in Sources */,
 				3BA00E5E28DA6BBC009A1C78 /* Constants.swift in Sources */,
+				3BBA529528DC52B100B1F8B6 /* CustomPageControl.swift in Sources */,
 				3BC1FDAE28DAFEC30041A2AE /* CellConfiguration.swift in Sources */,
 				3BA00E1728D992C2009A1C78 /* SpaceX.xcdatamodeld in Sources */,
 				3BC1FDB228DB43BC0041A2AE /* UIView+Extensions.swift in Sources */,

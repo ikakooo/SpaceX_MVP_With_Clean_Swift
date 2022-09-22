@@ -13,6 +13,7 @@ class ShipsSlideShowViewController: UIViewController {
     @IBOutlet weak var speedSlider: UISlider!
     @IBOutlet weak var restartButton: UIButton!
     @IBOutlet weak var playPauseButton: UIButton!
+    @IBOutlet weak var pageControler: CustomPageControl!
     
     var presenter: ShipsSlideShowPresenter!
     var timer: Timer? = Timer()
@@ -43,6 +44,11 @@ class ShipsSlideShowViewController: UIViewController {
         slideShowCollectionView.isPagingEnabled = true
         slideShowCollectionView.showsHorizontalScrollIndicator = false
         slideShowCollectionView.registerNib(class: ShipSlideCell.self)
+        pageControler.unselectedItemColor =  .gray
+        pageControler.selectedItemColor = .blue
+        presenter.pageDidChanged = { pageIndex in
+            self.pageControler.currentPageIndex = pageIndex
+        }
     }
     
     // MARK: Actions
@@ -104,8 +110,10 @@ extension ShipsSlideShowViewController {
 extension ShipsSlideShowViewController: ShipsSlideShowView {
     
     func reloadList() {
-        DispatchQueue.main.async {
-            self.slideShowCollectionView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.slideShowCollectionView.reloadData()
+            let dfgdf = self?.presenter.numberOfRows(in: 0)
+            self?.pageControler.numberOfItems = self?.presenter.numberOfRows(in: 0) ?? 0
         }
     }
     
@@ -143,6 +151,12 @@ extension ShipsSlideShowViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let x = targetContentOffset.pointee.x
+        let index = Int(x / UIScreen.main.bounds.width)
+        pageControler.currentPageIndex = index
+    }
 }
 
 extension ShipsSlideShowViewController {
@@ -165,11 +179,13 @@ extension ShipsSlideShowViewController {
                         indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
                         
                         coll.scrollToItem(at: indexPath1!, at: .centeredHorizontally, animated: true)
+                        pageControler.currentPageIndex = indexPath1!.row
                     }
                     else{
                         let indexPath1: IndexPath?
                         indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
                         coll.scrollToItem(at: indexPath1!, at: .right, animated: true)
+                        pageControler.currentPageIndex = indexPath1!.row
                     }
                     
                 }

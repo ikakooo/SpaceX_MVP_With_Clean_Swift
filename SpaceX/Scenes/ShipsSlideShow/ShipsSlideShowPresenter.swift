@@ -18,6 +18,7 @@ protocol ShipsSlideShowPresenter {
     func rowIdentifier(at indexPath: IndexPath) -> String
     func configure(row: ConfigurableCell, at indexPath: IndexPath)
     func didTapItem(at indePath: IndexPath)
+    var pageDidChanged: ((Int) -> Void)? { get set }
 }
 
 final class ShipsSlideShowPresenterImpl: NSObject, ShipsSlideShowPresenter {
@@ -25,6 +26,8 @@ final class ShipsSlideShowPresenterImpl: NSObject, ShipsSlideShowPresenter {
     private weak var view: ShipsSlideShowView?
     private var router: ShipsSlideShowRouter
     private let allShipsUseCase: AllShipsUseCase
+    
+    var pageDidChanged: ((Int) -> Void)?
     
     var allShips: [AllShipsModelElement] = [] {
         didSet {

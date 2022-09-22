@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShipsSlideShowViewController" customModule="SpaceX" customModuleProvider="target">
             <connections>
+                <outlet property="pageControler" destination="cJx-g7-j1Q" id="56b-Xz-1V6"/>
                 <outlet property="playPauseButton" destination="hca-HF-bdJ" id="Cn0-ig-i9S"/>
                 <outlet property="restartButton" destination="ApI-7j-l0r" id="mzz-6n-qyo"/>
                 <outlet property="slideShowCollectionView" destination="nvX-pb-iLJ" id="hSg-p9-4ta"/>
@@ -66,7 +67,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="nvX-pb-iLJ">
-                    <rect key="frame" x="0.0" y="44" width="414" height="717.5"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="690.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BiV-cB-D9M">
                         <size key="itemSize" width="128" height="128"/>
@@ -75,25 +76,35 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJx-g7-j1Q" customClass="CustomPageControl" customModule="Cryptal_Bank" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="734.5" width="414" height="15"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="yKl-x5-8kX"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="cJx-g7-j1Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4oa-B4-PUO"/>
                 <constraint firstItem="nvX-pb-iLJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="8WI-NA-EBN"/>
                 <constraint firstItem="gG6-q8-0Fl" firstAttribute="top" secondItem="x46-n6-eWR" secondAttribute="bottom" id="D5i-xV-Qiy"/>
                 <constraint firstItem="nvX-pb-iLJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JBi-Ah-908"/>
+                <constraint firstItem="cJx-g7-j1Q" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Lxh-61-IOI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="620-pc-yfM" secondAttribute="trailing" id="Ngr-Qr-8wz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nvX-pb-iLJ" secondAttribute="trailing" id="Qgt-mY-Tpy"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="x46-n6-eWR" secondAttribute="trailing" constant="24" id="Rtw-2q-avy"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gG6-q8-0Fl" secondAttribute="trailing" constant="24" id="UPf-hj-cJm"/>
                 <constraint firstItem="620-pc-yfM" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="bEA-GU-9qr"/>
-                <constraint firstItem="x46-n6-eWR" firstAttribute="top" secondItem="nvX-pb-iLJ" secondAttribute="bottom" id="fSU-ta-09P"/>
                 <constraint firstItem="620-pc-yfM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gwO-MN-7y4"/>
+                <constraint firstItem="x46-n6-eWR" firstAttribute="top" secondItem="cJx-g7-j1Q" secondAttribute="bottom" constant="12" id="lco-KD-ZxL"/>
                 <constraint firstItem="x46-n6-eWR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="mgx-4i-Z2W"/>
                 <constraint firstItem="gG6-q8-0Fl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="nEu-Zk-uVc"/>
+                <constraint firstItem="cJx-g7-j1Q" firstAttribute="top" secondItem="nvX-pb-iLJ" secondAttribute="bottom" id="rzd-6J-IiI"/>
                 <constraint firstItem="620-pc-yfM" firstAttribute="top" secondItem="gG6-q8-0Fl" secondAttribute="bottom" id="zPY-qi-0ZW"/>
             </constraints>
-            <point key="canvasLocation" x="136" y="146"/>
+            <point key="canvasLocation" x="134.78260869565219" y="145.98214285714286"/>
         </view>
     </objects>
     <resources>
