@@ -42,9 +42,8 @@ extension ShipSlideCell {
     
     struct ViewModel: CellModel {
         var cellIdentifier: String {
-            return "ShipSlideCell"
+            return String(describing: ShipSlideCell.self)
         }
         let ship: AllShipsModelElement
     }
-    
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ShipsSlideShowRouter {
-    func shipLaunchesAndMissionsPage(of ship: AllShipsModelElement)
+    func navigateToShipLaunchesAndMissionsPage(of ship: AllShipsModelElement)
 }
 
 class ShipsSlideShowRouterImpl: ShipsSlideShowRouter {
@@ -20,7 +20,7 @@ class ShipsSlideShowRouterImpl: ShipsSlideShowRouter {
         self.controller = controller
     }
     
-    func shipLaunchesAndMissionsPage(of ship: AllShipsModelElement) {
+    func navigateToShipLaunchesAndMissionsPage(of ship: AllShipsModelElement) {
         let vc = ShipLaunchesAndMissionsViewController()
         vc.ship = ship
         controller?.navigationController?.pushViewController(vc, animated: true)

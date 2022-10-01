@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B276ACF28E6105800131B63 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B276ACE28E6105800131B63 /* UIButton+Extensions.swift */; };
 		3BA00E0D28D992C2009A1C78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E0C28D992C2009A1C78 /* AppDelegate.swift */; };
 		3BA00E0F28D992C2009A1C78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E0E28D992C2009A1C78 /* SceneDelegate.swift */; };
 		3BA00E1728D992C2009A1C78 /* SpaceX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E1528D992C2009A1C78 /* SpaceX.xcdatamodeld */; };
@@ -27,6 +28,9 @@
 		3BA00E6028DA6D23009A1C78 /* AllShipsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E5F28DA6D23009A1C78 /* AllShipsGateway.swift */; };
 		3BA00E6228DA6E45009A1C78 /* AllShipsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E6128DA6E45009A1C78 /* AllShipsModel.swift */; };
 		3BA00E6428DA71F5009A1C78 /* AllShipsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E6328DA71F5009A1C78 /* AllShipsUseCase.swift */; };
+		3BA5928A28E6C9620057CA61 /* MissionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5928828E6C9620057CA61 /* MissionCell.swift */; };
+		3BA5928B28E6C9620057CA61 /* MissionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA5928928E6C9620057CA61 /* MissionCell.xib */; };
+		3BA5929128E6CC080057CA61 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5929028E6CC080057CA61 /* UITableView+Extension.swift */; };
 		3BBA529528DC52B100B1F8B6 /* CustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBA529428DC52B100B1F8B6 /* CustomPageControl.swift */; };
 		3BC1FDA628DAF50A0041A2AE /* ShipSlideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC1FDA428DAF50A0041A2AE /* ShipSlideCell.swift */; };
 		3BC1FDA728DAF50A0041A2AE /* ShipSlideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BC1FDA528DAF50A0041A2AE /* ShipSlideCell.xib */; };
@@ -39,6 +43,10 @@
 		3BC1FDB628DB8BD60041A2AE /* ShipLaunchesAndMissionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC1FDB528DB8BD60041A2AE /* ShipLaunchesAndMissionsConfigurator.swift */; };
 		3BC1FDB828DB8BFD0041A2AE /* ShipLaunchesAndMissionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC1FDB728DB8BFD0041A2AE /* ShipLaunchesAndMissionsRouter.swift */; };
 		3BC1FDBA28DB8C240041A2AE /* ShipLaunchesAndMissionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC1FDB928DB8C240041A2AE /* ShipLaunchesAndMissionsPresenter.swift */; };
+		3BD2EA9C28E8D11D004957FC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2EA9B28E8D11C004957FC /* String+Extensions.swift */; };
+		3BD2EA9E28E8D5C2004957FC /* ShipLaunchesAndMissionsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2EA9D28E8D5C2004957FC /* ShipLaunchesAndMissionsGateway.swift */; };
+		3BD2EAA028E8D8ED004957FC /* LauncheOrMissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2EA9F28E8D8ED004957FC /* LauncheOrMissionModel.swift */; };
+		3BD2EAA228E8DD11004957FC /* ShipLaunchesAndMissionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2EAA128E8DD11004957FC /* ShipLaunchesAndMissionsUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B276ACE28E6105800131B63 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		3BA00E0928D992C2009A1C78 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA00E0C28D992C2009A1C78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BA00E0E28D992C2009A1C78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +92,9 @@
 		3BA00E5F28DA6D23009A1C78 /* AllShipsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllShipsGateway.swift; sourceTree = "<group>"; };
 		3BA00E6128DA6E45009A1C78 /* AllShipsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllShipsModel.swift; sourceTree = "<group>"; };
 		3BA00E6328DA71F5009A1C78 /* AllShipsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllShipsUseCase.swift; sourceTree = "<group>"; };
+		3BA5928828E6C9620057CA61 /* MissionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCell.swift; sourceTree = "<group>"; };
+		3BA5928928E6C9620057CA61 /* MissionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MissionCell.xib; sourceTree = "<group>"; };
+		3BA5929028E6CC080057CA61 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		3BBA529428DC52B100B1F8B6 /* CustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
 		3BC1FDA428DAF50A0041A2AE /* ShipSlideCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipSlideCell.swift; sourceTree = "<group>"; };
 		3BC1FDA528DAF50A0041A2AE /* ShipSlideCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShipSlideCell.xib; sourceTree = "<group>"; };
@@ -95,6 +107,10 @@
 		3BC1FDB528DB8BD60041A2AE /* ShipLaunchesAndMissionsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipLaunchesAndMissionsConfigurator.swift; sourceTree = "<group>"; };
 		3BC1FDB728DB8BFD0041A2AE /* ShipLaunchesAndMissionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipLaunchesAndMissionsRouter.swift; sourceTree = "<group>"; };
 		3BC1FDB928DB8C240041A2AE /* ShipLaunchesAndMissionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipLaunchesAndMissionsPresenter.swift; sourceTree = "<group>"; };
+		3BD2EA9B28E8D11C004957FC /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		3BD2EA9D28E8D5C2004957FC /* ShipLaunchesAndMissionsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipLaunchesAndMissionsGateway.swift; sourceTree = "<group>"; };
+		3BD2EA9F28E8D8ED004957FC /* LauncheOrMissionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncheOrMissionModel.swift; sourceTree = "<group>"; };
+		3BD2EAA128E8DD11004957FC /* ShipLaunchesAndMissionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipLaunchesAndMissionsUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				3BA00E5F28DA6D23009A1C78 /* AllShipsGateway.swift */,
+				3BD2EA9D28E8D5C2004957FC /* ShipLaunchesAndMissionsGateway.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -232,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				3BA00E6328DA71F5009A1C78 /* AllShipsUseCase.swift */,
+				3BD2EAA128E8DD11004957FC /* ShipLaunchesAndMissionsUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -240,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				3BA00E6128DA6E45009A1C78 /* AllShipsModel.swift */,
+				3BD2EA9F28E8D8ED004957FC /* LauncheOrMissionModel.swift */,
 			);
 			path = ApiEntities;
 			sourceTree = "<group>";
@@ -287,8 +306,9 @@
 		3BA00E5128DA33FF009A1C78 /* ShipLaunchesAndMissions */ = {
 			isa = PBXGroup;
 			children = (
-				3BA00E5228DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.swift */,
+				3BA5928628E6C9200057CA61 /* TableComponents */,
 				3BA00E5328DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.xib */,
+				3BA00E5228DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.swift */,
 				3BC1FDB928DB8C240041A2AE /* ShipLaunchesAndMissionsPresenter.swift */,
 				3BC1FDB728DB8BFD0041A2AE /* ShipLaunchesAndMissionsRouter.swift */,
 				3BC1FDB528DB8BD60041A2AE /* ShipLaunchesAndMissionsConfigurator.swift */,
@@ -302,6 +322,23 @@
 				3BA00E5D28DA6BBC009A1C78 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		3BA5928628E6C9200057CA61 /* TableComponents */ = {
+			isa = PBXGroup;
+			children = (
+				3BA5928728E6C92B0057CA61 /* Cells */,
+			);
+			path = TableComponents;
+			sourceTree = "<group>";
+		};
+		3BA5928728E6C92B0057CA61 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3BA5928828E6C9620057CA61 /* MissionCell.swift */,
+				3BA5928928E6C9620057CA61 /* MissionCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		3BC1FDA328DAF4E90041A2AE /* ShipSlideCell */ = {
@@ -320,6 +357,9 @@
 				3BC1FDAB28DAFD7A0041A2AE /* UICollectionViewCell+Extension.swift */,
 				3BC1FDAF28DB1BBA0041A2AE /* UIImageView+Extensions.swift */,
 				3BC1FDB128DB43BC0041A2AE /* UIView+Extensions.swift */,
+				3B276ACE28E6105800131B63 /* UIButton+Extensions.swift */,
+				3BA5929028E6CC080057CA61 /* UITableView+Extension.swift */,
+				3BD2EA9B28E8D11C004957FC /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -430,6 +470,7 @@
 			files = (
 				3BA00E5528DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.xib in Resources */,
 				3BA00E1C28D992C3009A1C78 /* LaunchScreen.storyboard in Resources */,
+				3BA5928B28E6C9620057CA61 /* MissionCell.xib in Resources */,
 				3BA00E1928D992C3009A1C78 /* Assets.xcassets in Resources */,
 				3BA00E5028DA2C55009A1C78 /* ShipsSlideShowViewController.xib in Resources */,
 				3BC1FDA728DAF50A0041A2AE /* ShipSlideCell.xib in Resources */,
@@ -459,17 +500,23 @@
 			files = (
 				3BA00E5428DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.swift in Sources */,
 				3BA00E0D28D992C2009A1C78 /* AppDelegate.swift in Sources */,
+				3BD2EAA028E8D8ED004957FC /* LauncheOrMissionModel.swift in Sources */,
 				3BA00E0F28D992C2009A1C78 /* SceneDelegate.swift in Sources */,
 				3BC1FDA628DAF50A0041A2AE /* ShipSlideCell.swift in Sources */,
 				3BA00E6228DA6E45009A1C78 /* AllShipsModel.swift in Sources */,
 				3BC1FDBA28DB8C240041A2AE /* ShipLaunchesAndMissionsPresenter.swift in Sources */,
+				3BA5928A28E6C9620057CA61 /* MissionCell.swift in Sources */,
+				3BD2EA9E28E8D5C2004957FC /* ShipLaunchesAndMissionsGateway.swift in Sources */,
 				3BA00E4F28DA2C55009A1C78 /* ShipsSlideShowViewController.swift in Sources */,
+				3BD2EA9C28E8D11D004957FC /* String+Extensions.swift in Sources */,
 				3BC1FDAA28DAFD2A0041A2AE /* UICollectionView+Extension.swift in Sources */,
 				3BA00E6028DA6D23009A1C78 /* AllShipsGateway.swift in Sources */,
 				3BA00E4928D997CF009A1C78 /* Fetcher.swift in Sources */,
+				3BA5929128E6CC080057CA61 /* UITableView+Extension.swift in Sources */,
 				3BA00E5E28DA6BBC009A1C78 /* Constants.swift in Sources */,
 				3BBA529528DC52B100B1F8B6 /* CustomPageControl.swift in Sources */,
 				3BC1FDAE28DAFEC30041A2AE /* CellConfiguration.swift in Sources */,
+				3B276ACF28E6105800131B63 /* UIButton+Extensions.swift in Sources */,
 				3BA00E1728D992C2009A1C78 /* SpaceX.xcdatamodeld in Sources */,
 				3BC1FDB228DB43BC0041A2AE /* UIView+Extensions.swift in Sources */,
 				3BC1FDB028DB1BBA0041A2AE /* UIImageView+Extensions.swift in Sources */,
@@ -481,6 +528,7 @@
 				3BC1FDB428DB4CD90041A2AE /* UDManager.swift in Sources */,
 				3BA00E5928DA4A34009A1C78 /* ShipsSlideShowRouter.swift in Sources */,
 				3BC1FDB628DB8BD60041A2AE /* ShipLaunchesAndMissionsConfigurator.swift in Sources */,
+				3BD2EAA228E8DD11004957FC /* ShipLaunchesAndMissionsUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

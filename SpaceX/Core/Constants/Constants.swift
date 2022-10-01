@@ -12,10 +12,9 @@ enum Constants {
     
     enum Endpoint {
         static let ships = "/ships"
+        static let launches = "/launches"
     }
     
-    enum Version {
-        static let v3 = "/v3"
-    }
+    static let version = "/v3"
     static let placeholderIMG = "https://i.kym-cdn.com/entries/icons/original/000/027/100/_103330503_musk3.jpg"
 }

@@ -16,8 +16,11 @@ final class ShipLaunchesAndMissionsConfiguratorImpl: ShipLaunchesAndMissionsConf
     func configure(_ controller: ShipLaunchesAndMissionsViewController) {
         let router: ShipLaunchesAndMissionsRouter = ShipLaunchesAndMissionsRouterImpl(controller)
         
+        let shipLaunchesAndMissionsGateway = ApiShipLaunchesAndMissionsGateway()
+        let shipLaunchesAndMissionsUseCase = ApiShipLaunchesAndMissionsUseCaseImpl(
+            gateway: shipLaunchesAndMissionsGateway)
         
-        let presenter: ShipLaunchesAndMissionsPresenter = ShipLaunchesAndMissionsPresenterImpl()
+        let presenter: ShipLaunchesAndMissionsPresenter = ShipLaunchesAndMissionsPresenterImpl(view: controller, router: router, shipLaunchesAndMissionsUseCase: shipLaunchesAndMissionsUseCase)
         
         controller.presenter = presenter
     }

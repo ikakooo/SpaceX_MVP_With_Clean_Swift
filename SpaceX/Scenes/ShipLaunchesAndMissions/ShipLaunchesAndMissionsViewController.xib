@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShipLaunchesAndMissionsViewController" customModule="SpaceX" customModuleProvider="target">
             <connections>
+                <outlet property="missionsTableview" destination="Lgb-aM-UuY" id="HFO-Ss-k7N"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,14 +18,59 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5gc-RS-7Wj">
+                    <rect key="frame" x="16" y="65" width="248" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="DJv-Bv-bvA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Missions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvv-dZ-IAJ">
+                    <rect key="frame" x="16" y="44" width="382" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVS-OU-z3k">
+                    <rect key="frame" x="264" y="65" width="134" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="fhP-YD-mtD"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Show All">
+                        <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="22"/>
+                    </buttonConfiguration>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Lgb-aM-UuY">
+                    <rect key="frame" x="16" y="120" width="382" height="742"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemPinkColor"/>
-            <point key="canvasLocation" x="139" y="112"/>
+            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Lgb-aM-UuY" secondAttribute="bottom" id="0cJ-8k-qPA"/>
+                <constraint firstItem="iVS-OU-z3k" firstAttribute="top" secondItem="lvv-dZ-IAJ" secondAttribute="bottom" id="3yC-ya-YqK"/>
+                <constraint firstItem="iVS-OU-z3k" firstAttribute="leading" secondItem="5gc-RS-7Wj" secondAttribute="trailing" id="5ty-ac-26D"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iVS-OU-z3k" secondAttribute="trailing" constant="16" id="81d-ib-h4r"/>
+                <constraint firstItem="5gc-RS-7Wj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="9nW-qj-09O"/>
+                <constraint firstItem="Lgb-aM-UuY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="LH1-YC-ChD"/>
+                <constraint firstItem="5gc-RS-7Wj" firstAttribute="top" secondItem="lvv-dZ-IAJ" secondAttribute="bottom" id="W1Y-15-iek"/>
+                <constraint firstItem="Lgb-aM-UuY" firstAttribute="top" secondItem="5gc-RS-7Wj" secondAttribute="bottom" constant="5" id="YON-td-PZK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5gc-RS-7Wj" secondAttribute="trailing" constant="150" id="e9p-rn-MF7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lvv-dZ-IAJ" secondAttribute="trailing" constant="16" id="eyL-CG-MJI"/>
+                <constraint firstItem="lvv-dZ-IAJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="fNs-vU-NUs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Lgb-aM-UuY" secondAttribute="trailing" constant="16" id="feY-ca-hIz"/>
+                <constraint firstItem="lvv-dZ-IAJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="qg8-eF-t5q"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="111.83035714285714"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -165,7 +165,7 @@ extension ShipsSlideShowViewController {
         stopTimer()
         timer = Timer.scheduledTimer(timeInterval: TimeInterval( 2.5 / speed), target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
         isPlaying = true
-        playPauseButton.setImage(UIImage(systemName: "pause"), for: .normal)
+        playPauseButton.set(image:UIImage(systemName: "pause"))
     }
     
     @objc func scrollAutomatically(_ timer1: Timer) {
@@ -196,7 +196,7 @@ extension ShipsSlideShowViewController {
         timer?.invalidate()
         timer = nil
         isPlaying = false
-        playPauseButton.setImage(UIImage(systemName: "play"), for: .normal)
+        playPauseButton.set(image: UIImage(systemName: "play"))
         UDManager.shared.save(speed: speedSlider.value)
     }
 }

@@ -75,7 +75,7 @@ final class ShipsSlideShowPresenterImpl: NSObject, ShipsSlideShowPresenter {
     }
     
     func didTapItem(at indePath: IndexPath) {
-        router.shipLaunchesAndMissionsPage(of: allShips[indePath.row])
+        router.navigateToShipLaunchesAndMissionsPage(of: allShips[indePath.row])
     }
     
 }
