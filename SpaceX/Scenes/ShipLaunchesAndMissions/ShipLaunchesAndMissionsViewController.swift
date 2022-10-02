@@ -15,19 +15,19 @@ class ShipLaunchesAndMissionsViewController: UIViewController {
     var presenter: ShipLaunchesAndMissionsPresenter!
     
     // MARK: - Object lifecycle
-
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setupCleanSwift()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupCleanSwift()
     }
-
+    
     // MARK: - Setup ShipLaunchesAndMissionsPresenter
-
+    
     private func setupCleanSwift() {
         let configurator = ShipLaunchesAndMissionsConfiguratorImpl()
         configurator.configure(self)

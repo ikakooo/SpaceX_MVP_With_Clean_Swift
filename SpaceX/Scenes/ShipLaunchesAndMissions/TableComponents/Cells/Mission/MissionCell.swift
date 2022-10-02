@@ -45,7 +45,6 @@ extension MissionCell: ConfigurableCell {
     
 }
 
-
 extension MissionCell {
     
     struct ViewModel: CellModel {
@@ -56,5 +55,4 @@ extension MissionCell {
         
         weak var delegate: MissionCellDelegate?
     }
-    
 }

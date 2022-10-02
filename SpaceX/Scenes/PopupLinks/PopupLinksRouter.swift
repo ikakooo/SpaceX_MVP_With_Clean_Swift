@@ -22,5 +22,4 @@ class PopupLinksRouterImpl: PopupLinksRouter {
     func openLink(with link: String?) {
         
     }
-    
 }

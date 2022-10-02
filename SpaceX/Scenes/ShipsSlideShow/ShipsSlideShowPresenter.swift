@@ -70,7 +70,6 @@ final class ShipsSlideShowPresenterImpl: NSObject, ShipsSlideShowPresenter {
             case .failure(let error):
                 print(error)
             }
-            
         }
     }
     

@@ -8,31 +8,31 @@
 import UIKit
 
 class ShipsSlideShowViewController: UIViewController {
-    @IBOutlet weak var slideShowCollectionView: UICollectionView!
-    @IBOutlet weak var speedLabel: UILabel!
-    @IBOutlet weak var speedSlider: UISlider!
-    @IBOutlet weak var restartButton: UIButton!
-    @IBOutlet weak var playPauseButton: UIButton!
-    @IBOutlet weak var pageControler: CustomPageControl!
+    @IBOutlet private weak var slideShowCollectionView: UICollectionView!
+    @IBOutlet private weak var speedLabel: UILabel!
+    @IBOutlet private weak var speedSlider: UISlider!
+    @IBOutlet private weak var restartButton: UIButton!
+    @IBOutlet private weak var playPauseButton: UIButton!
+    @IBOutlet private weak var pageControler: CustomPageControl!
     
     var presenter: ShipsSlideShowPresenter!
     var timer: Timer? = Timer()
     var isPlaying = false
     
     // MARK: - Object lifecycle
-
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setupCleanSwift()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupCleanSwift()
     }
-
+    
     // MARK: - Setup
-
+    
     private func setupCleanSwift() {
         let configurator = ShipsSlideShowConfiguratorImpl()
         configurator.configure(self)
@@ -68,7 +68,7 @@ class ShipsSlideShowViewController: UIViewController {
     
     @IBAction func restartButtonTapAction(_ sender: Any) {
         UIView.animate(withDuration: 0.5, animations: {
-             self.slideShowCollectionView?.contentOffset.x = 0
+            self.slideShowCollectionView?.contentOffset.x = 0
         })
         speedLabel.text = "Speed: \(String(format: "%.1f", 1.0)) X"
         if isPlaying { startTimer(speed: 1 ) }
@@ -125,7 +125,7 @@ extension ShipsSlideShowViewController: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.numberOfRows(in: section)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = presenter.rowIdentifier(at: indexPath)
         let dequeued = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
@@ -169,28 +169,28 @@ extension ShipsSlideShowViewController {
     }
     
     @objc func scrollAutomatically(_ timer1: Timer) {
-            
-            if let coll  = slideShowCollectionView {
-                for cell in coll.visibleCells {
-                    let indexPath: IndexPath? = coll.indexPath(for: cell)
-                    if ((indexPath?.row)!  < presenter.numberOfRows(in: 0) - 1){
-                        let indexPath1: IndexPath?
-                        indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
-                        
-                        coll.scrollToItem(at: indexPath1!, at: .centeredHorizontally, animated: true)
-                        pageControler.currentPageIndex = indexPath1!.row
-                    }
-                    else{
-                        let indexPath1: IndexPath?
-                        indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
-                        coll.scrollToItem(at: indexPath1!, at: .right, animated: true)
-                        pageControler.currentPageIndex = indexPath1!.row
-                    }
+        
+        if let coll  = slideShowCollectionView {
+            for cell in coll.visibleCells {
+                let indexPath: IndexPath? = coll.indexPath(for: cell)
+                if ((indexPath?.row)!  < presenter.numberOfRows(in: 0) - 1){
+                    let indexPath1: IndexPath?
+                    indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
                     
+                    coll.scrollToItem(at: indexPath1!, at: .centeredHorizontally, animated: true)
+                    pageControler.currentPageIndex = indexPath1!.row
                 }
+                else{
+                    let indexPath1: IndexPath?
+                    indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
+                    coll.scrollToItem(at: indexPath1!, at: .right, animated: true)
+                    pageControler.currentPageIndex = indexPath1!.row
+                }
+                
             }
-            
         }
+        
+    }
     
     private func stopTimer(){
         timer?.invalidate()

@@ -28,5 +28,4 @@ final class ShipsSlideShowConfiguratorImpl: ShipsSlideShowConfigurator {
         
         controller.presenter = presenter
     }
-    
 }

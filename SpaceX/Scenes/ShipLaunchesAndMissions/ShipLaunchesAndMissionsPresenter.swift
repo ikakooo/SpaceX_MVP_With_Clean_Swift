@@ -102,15 +102,15 @@ extension ShipLaunchesAndMissionsPresenterImpl {
     var numberOfSections: Int {
         return listDataSource.count
     }
-
+    
     func numberOfRows(in section: Int) -> Int {
         return listDataSource[section].cellModels.count
     }
-
+    
     func rowIdentifier(at indexPath: IndexPath) -> String {
         return listDataSource[indexPath.section].cellModels[indexPath.row].cellIdentifier
     }
-
+    
     func configure(row: ConfigurableCell, at indexPath: IndexPath) {
         row.configure(with: listDataSource[indexPath.section].cellModels[indexPath.row])
     }

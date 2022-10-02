@@ -17,10 +17,8 @@ class ShipSlideCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
 }
-
-
 
 extension ShipSlideCell: ConfigurableCell {
     
@@ -36,7 +34,6 @@ extension ShipSlideCell: ConfigurableCell {
     }
     
 }
-
 
 extension ShipSlideCell {
     

@@ -8,11 +8,11 @@
 import UIKit
 
 class PopupLinksViewController: UIViewController {
-    @IBOutlet weak var shipNameLabel: UILabel!
-    @IBOutlet weak var linksTableview: UITableView!
+    @IBOutlet private weak var shipNameLabel: UILabel!
+    @IBOutlet private weak var linksTableview: UITableView!
     
     var presenter: PopupLinksPresenter!
-
+    
     
     var mission: LauncheOrMissionModel? = nil
     
@@ -29,9 +29,9 @@ class PopupLinksViewController: UIViewController {
         super.init(coder: coder)
         setupCleanSwift()
     }
-
+    
     // MARK: - Setup
-
+    
     private func setupCleanSwift() {
         let configurator = PopupLinksConfiguratorImpl()
         configurator.configure(self)
@@ -42,7 +42,6 @@ class PopupLinksViewController: UIViewController {
         linksTableview.delegate = self
         linksTableview.registerNib(class: LinksCell.self)
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +54,6 @@ class PopupLinksViewController: UIViewController {
 
 // MARK: View Protocol Conformation
 extension PopupLinksViewController: PopupLinksView {
-    
     
     func reloadList() {
         DispatchQueue.main.async {

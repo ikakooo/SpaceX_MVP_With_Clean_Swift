@@ -21,11 +21,11 @@ class ShipLaunchesAndMissionsRouterImpl: ShipLaunchesAndMissionsRouter {
     
     func showPopupLinks(with mission: LauncheOrMissionModel?) {
         let vc = PopupLinksViewController(mission:mission)
-    
+        
         if let presentationController = vc.presentationController as? UISheetPresentationController {
             presentationController.detents = [.medium()]
         }
-    
+        
         controller?.present(vc, animated: true)
     }
     
