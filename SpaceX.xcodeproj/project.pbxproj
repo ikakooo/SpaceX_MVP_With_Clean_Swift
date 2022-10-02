@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B276ACF28E6105800131B63 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B276ACE28E6105800131B63 /* UIButton+Extensions.swift */; };
+		3B7E55E028EA2BA800B6FE55 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7E55DF28EA2BA800B6FE55 /* GradientView.swift */; };
 		3BA00E0D28D992C2009A1C78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E0C28D992C2009A1C78 /* AppDelegate.swift */; };
 		3BA00E0F28D992C2009A1C78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E0E28D992C2009A1C78 /* SceneDelegate.swift */; };
 		3BA00E1728D992C2009A1C78 /* SpaceX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E1528D992C2009A1C78 /* SpaceX.xcdatamodeld */; };
@@ -79,6 +80,7 @@
 
 /* Begin PBXFileReference section */
 		3B276ACE28E6105800131B63 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		3B7E55DF28EA2BA800B6FE55 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		3BA00E0928D992C2009A1C78 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA00E0C28D992C2009A1C78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BA00E0E28D992C2009A1C78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 				3BBA529428DC52B100B1F8B6 /* CustomPageControl.swift */,
 				3BD2EAA428E8F46D004957FC /* FloatingLabelInput.swift */,
 				3BD2EAAC28E9C082004957FC /* DialogAlertsForActions.swift */,
+				3B7E55DF28EA2BA800B6FE55 /* GradientView.swift */,
 			);
 			path = "Custom UI Components";
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				3BA00E4928D997CF009A1C78 /* Fetcher.swift in Sources */,
 				3BD2EAB428EA04BC004957FC /* PopupLinksPresenter.swift in Sources */,
 				3BA5929128E6CC080057CA61 /* UITableView+Extension.swift in Sources */,
+				3B7E55E028EA2BA800B6FE55 /* GradientView.swift in Sources */,
 				3BA00E5E28DA6BBC009A1C78 /* Constants.swift in Sources */,
 				3BBA529528DC52B100B1F8B6 /* CustomPageControl.swift in Sources */,
 				3BC1FDAE28DAFEC30041A2AE /* CellConfiguration.swift in Sources */,

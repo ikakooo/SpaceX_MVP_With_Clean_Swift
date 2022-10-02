@@ -20,13 +20,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="Link">
-                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="17"/>
+                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
                         </buttonConfiguration>
                         <connections>
                             <action selector="linkButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="BGT-dz-bjf"/>
                         </connections>
                     </button>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="4Q0-5B-RFi" secondAttribute="bottom" id="4dB-HV-RAV"/>
                     <constraint firstItem="4Q0-5B-RFi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Mt4-KJ-G7N"/>
@@ -35,6 +36,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="linkButton" destination="4Q0-5B-RFi" id="FKv-B1-Sju"/>
             </connections>
