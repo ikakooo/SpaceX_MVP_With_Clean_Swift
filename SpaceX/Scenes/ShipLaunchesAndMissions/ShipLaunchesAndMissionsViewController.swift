@@ -9,6 +9,7 @@ import UIKit
 
 class ShipLaunchesAndMissionsViewController: UIViewController {
     @IBOutlet weak var missionsTableview: UITableView!
+    @IBOutlet weak var searchInput: FloatingLabelInput!
     
     var ship: AllShipsModelElement?
     var presenter: ShipLaunchesAndMissionsPresenter!
@@ -36,11 +37,18 @@ class ShipLaunchesAndMissionsViewController: UIViewController {
         missionsTableview.dataSource = self
         missionsTableview.delegate = self
         missionsTableview.registerNib(class: MissionCell.self)
-    
+        missionsTableview.registerNib(class: MissionEmptyCell.self)
     }
     
     // MARK: Actions
-
+    @IBAction func searchingMissionInputChanged(_ sender: FloatingLabelInput) {
+        presenter.fiterMissions(with: sender.text, in: ship?.missions ?? [])
+    }
+    
+    @IBAction func showAllTapped(_ sender: Any) {
+        searchInput.text = ""
+        presenter.viewDidLoad(with: ship?.missions ?? [])
+    }
 }
 
 // MARK: UIViewController Lifecycle
@@ -57,6 +65,10 @@ extension ShipLaunchesAndMissionsViewController {
 
 // MARK: View Protocol Conformation
 extension ShipLaunchesAndMissionsViewController: ShipLaunchesAndMissionsView {
+    func alert(text: String) {
+        openAlert(title: text, message: "", closeButtonTitle: "OK"){}
+    }
+    
     
     func reloadList() {
         DispatchQueue.main.async {

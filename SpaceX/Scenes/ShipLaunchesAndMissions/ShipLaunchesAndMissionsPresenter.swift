@@ -9,10 +9,12 @@ import UIKit
 
 protocol ShipLaunchesAndMissionsView: AnyObject {
     func reloadList()
+    func alert(text: String)
 }
 
 protocol ShipLaunchesAndMissionsPresenter {
     func viewDidLoad(with missions: [Mission] )
+    func fiterMissions(with name: String?, in missions: [Mission])
     var numberOfSections: Int { get }
     func numberOfRows(in section: Int) -> Int
     func rowIdentifier(at indexPath: IndexPath) -> String
@@ -55,7 +57,11 @@ final class ShipLaunchesAndMissionsPresenterImpl: NSObject, ShipLaunchesAndMissi
     }
     
     private var missionSections: SectionModel {
-        let missionCells = allMissionsWithDetails.map { missionModel in MissionCell.ViewModel(mission: missionModel) }
+        var missionCells: [CellModel] = allMissionsWithDetails.map { missionModel in MissionCell.ViewModel(mission: missionModel) }
+        
+        if missionCells.isEmpty {
+            missionCells = [MissionEmptyCell.ViewModel()]
+        }
         
         return SectionModel(
             headerModel: nil,
@@ -64,14 +70,15 @@ final class ShipLaunchesAndMissionsPresenterImpl: NSObject, ShipLaunchesAndMissi
     }
     
     private func translateData(){
+        allMissionsWithDetails.removeAll()
         allmissions.forEach { mission in
             shipLaunchesAndMissionsUseCase.fetchAllShips(to: mission.flight ?? 0) { [self] result in
                 
                 switch result {
                 case .success(let missionModel):
                     allMissionsWithDetails.append (missionModel)
-                case .failure(let error):
-                    print(error)
+                case .failure:
+                    view?.alert(text: "Internet Connection Error!")
                 }
             }
         }
@@ -79,6 +86,10 @@ final class ShipLaunchesAndMissionsPresenterImpl: NSObject, ShipLaunchesAndMissi
     
     func viewDidLoad(with missions: [Mission] ) {
         self.allmissions = missions
+    }
+    
+    func fiterMissions(with name: String?, in missions: [Mission]) {
+        self.allmissions = missions.filter({($0.name?.containsIgnoringCase(find: name ?? "") ?? false)})
     }
     
 }

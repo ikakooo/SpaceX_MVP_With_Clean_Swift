@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShipLaunchesAndMissionsViewController" customModule="SpaceX" customModuleProvider="target">
             <connections>
                 <outlet property="missionsTableview" destination="Lgb-aM-UuY" id="HFO-Ss-k7N"/>
+                <outlet property="searchInput" destination="5gc-RS-7Wj" id="64L-lH-8sv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,13 +20,16 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5gc-RS-7Wj">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5gc-RS-7Wj" customClass="FloatingLabelInput" customModule="SpaceX" customModuleProvider="target">
                     <rect key="frame" x="16" y="65" width="248" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="DJv-Bv-bvA"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="searchingMissionInputChanged:" destination="-1" eventType="editingChanged" id="m7j-Ba-QMg"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Missions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvv-dZ-IAJ">
                     <rect key="frame" x="16" y="44" width="382" height="21"/>
@@ -42,6 +46,9 @@
                     <buttonConfiguration key="configuration" style="plain" title="Show All">
                         <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="22"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="showAllTapped:" destination="-1" eventType="touchUpInside" id="cD7-g7-Wr9"/>
+                    </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Lgb-aM-UuY">
                     <rect key="frame" x="16" y="120" width="382" height="742"/>

@@ -47,6 +47,10 @@
 		3BD2EA9E28E8D5C2004957FC /* ShipLaunchesAndMissionsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2EA9D28E8D5C2004957FC /* ShipLaunchesAndMissionsGateway.swift */; };
 		3BD2EAA028E8D8ED004957FC /* LauncheOrMissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2EA9F28E8D8ED004957FC /* LauncheOrMissionModel.swift */; };
 		3BD2EAA228E8DD11004957FC /* ShipLaunchesAndMissionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2EAA128E8DD11004957FC /* ShipLaunchesAndMissionsUseCase.swift */; };
+		3BD2EAA528E8F46D004957FC /* FloatingLabelInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2EAA428E8F46D004957FC /* FloatingLabelInput.swift */; };
+		3BD2EAA828E9B95C004957FC /* MissionEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2EAA628E9B95C004957FC /* MissionEmptyCell.swift */; };
+		3BD2EAA928E9B95C004957FC /* MissionEmptyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD2EAA728E9B95C004957FC /* MissionEmptyCell.xib */; };
+		3BD2EAAD28E9C082004957FC /* DialogAlertsForActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2EAAC28E9C082004957FC /* DialogAlertsForActions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +115,10 @@
 		3BD2EA9D28E8D5C2004957FC /* ShipLaunchesAndMissionsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipLaunchesAndMissionsGateway.swift; sourceTree = "<group>"; };
 		3BD2EA9F28E8D8ED004957FC /* LauncheOrMissionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncheOrMissionModel.swift; sourceTree = "<group>"; };
 		3BD2EAA128E8DD11004957FC /* ShipLaunchesAndMissionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipLaunchesAndMissionsUseCase.swift; sourceTree = "<group>"; };
+		3BD2EAA428E8F46D004957FC /* FloatingLabelInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingLabelInput.swift; sourceTree = "<group>"; };
+		3BD2EAA628E9B95C004957FC /* MissionEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionEmptyCell.swift; sourceTree = "<group>"; };
+		3BD2EAA728E9B95C004957FC /* MissionEmptyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MissionEmptyCell.xib; sourceTree = "<group>"; };
+		3BD2EAAC28E9C082004957FC /* DialogAlertsForActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogAlertsForActions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,10 +197,10 @@
 		3BA00E3F28D99703009A1C78 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3BD2EAA328E8F45D004957FC /* Custom UI Components */,
 				3BC1FDA828DAFD150041A2AE /* Extensions */,
 				3BA00E4028D9970F009A1C78 /* Network */,
 				3BC1FDAD28DAFEC30041A2AE /* CellConfiguration.swift */,
-				3BBA529428DC52B100B1F8B6 /* CustomPageControl.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -335,8 +343,8 @@
 		3BA5928728E6C92B0057CA61 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				3BA5928828E6C9620057CA61 /* MissionCell.swift */,
-				3BA5928928E6C9620057CA61 /* MissionCell.xib */,
+				3BD2EAAB28E9B97C004957FC /* Mission */,
+				3BD2EAAA28E9B975004957FC /* MissionEmpty */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -362,6 +370,34 @@
 				3BD2EA9B28E8D11C004957FC /* String+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3BD2EAA328E8F45D004957FC /* Custom UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				3BBA529428DC52B100B1F8B6 /* CustomPageControl.swift */,
+				3BD2EAA428E8F46D004957FC /* FloatingLabelInput.swift */,
+				3BD2EAAC28E9C082004957FC /* DialogAlertsForActions.swift */,
+			);
+			path = "Custom UI Components";
+			sourceTree = "<group>";
+		};
+		3BD2EAAA28E9B975004957FC /* MissionEmpty */ = {
+			isa = PBXGroup;
+			children = (
+				3BD2EAA728E9B95C004957FC /* MissionEmptyCell.xib */,
+				3BD2EAA628E9B95C004957FC /* MissionEmptyCell.swift */,
+			);
+			path = MissionEmpty;
+			sourceTree = "<group>";
+		};
+		3BD2EAAB28E9B97C004957FC /* Mission */ = {
+			isa = PBXGroup;
+			children = (
+				3BA5928928E6C9620057CA61 /* MissionCell.xib */,
+				3BA5928828E6C9620057CA61 /* MissionCell.swift */,
+			);
+			path = Mission;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -472,6 +508,7 @@
 				3BA00E1C28D992C3009A1C78 /* LaunchScreen.storyboard in Resources */,
 				3BA5928B28E6C9620057CA61 /* MissionCell.xib in Resources */,
 				3BA00E1928D992C3009A1C78 /* Assets.xcassets in Resources */,
+				3BD2EAA928E9B95C004957FC /* MissionEmptyCell.xib in Resources */,
 				3BA00E5028DA2C55009A1C78 /* ShipsSlideShowViewController.xib in Resources */,
 				3BC1FDA728DAF50A0041A2AE /* ShipSlideCell.xib in Resources */,
 			);
@@ -504,9 +541,11 @@
 				3BA00E0F28D992C2009A1C78 /* SceneDelegate.swift in Sources */,
 				3BC1FDA628DAF50A0041A2AE /* ShipSlideCell.swift in Sources */,
 				3BA00E6228DA6E45009A1C78 /* AllShipsModel.swift in Sources */,
+				3BD2EAAD28E9C082004957FC /* DialogAlertsForActions.swift in Sources */,
 				3BC1FDBA28DB8C240041A2AE /* ShipLaunchesAndMissionsPresenter.swift in Sources */,
 				3BA5928A28E6C9620057CA61 /* MissionCell.swift in Sources */,
 				3BD2EA9E28E8D5C2004957FC /* ShipLaunchesAndMissionsGateway.swift in Sources */,
+				3BD2EAA828E9B95C004957FC /* MissionEmptyCell.swift in Sources */,
 				3BA00E4F28DA2C55009A1C78 /* ShipsSlideShowViewController.swift in Sources */,
 				3BD2EA9C28E8D11D004957FC /* String+Extensions.swift in Sources */,
 				3BC1FDAA28DAFD2A0041A2AE /* UICollectionView+Extension.swift in Sources */,
@@ -521,6 +560,7 @@
 				3BC1FDB228DB43BC0041A2AE /* UIView+Extensions.swift in Sources */,
 				3BC1FDB028DB1BBA0041A2AE /* UIImageView+Extensions.swift in Sources */,
 				3BA00E5728DA49EB009A1C78 /* ShipsSlideShowPresenter.swift in Sources */,
+				3BD2EAA528E8F46D004957FC /* FloatingLabelInput.swift in Sources */,
 				3BC1FDAC28DAFD7A0041A2AE /* UICollectionViewCell+Extension.swift in Sources */,
 				3BC1FDB828DB8BFD0041A2AE /* ShipLaunchesAndMissionsRouter.swift in Sources */,
 				3BA00E5B28DA4A56009A1C78 /* ShipsSlideShowConfigurator.swift in Sources */,

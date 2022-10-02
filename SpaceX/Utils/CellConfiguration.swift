@@ -15,7 +15,6 @@ protocol ConfigurableCell {
     func configure(with model: CellModel)
 }
 
-
 struct SectionModel {
     let headerModel: CellModel?
     let cellModels: [CellModel]
