@@ -9,6 +9,7 @@ import UIKit
 
 protocol ShipsSlideShowView: AnyObject {
     func reloadList()
+    func alert(text: String)
 }
 
 protocol ShipsSlideShowPresenter {
@@ -22,7 +23,7 @@ protocol ShipsSlideShowPresenter {
 }
 
 final class ShipsSlideShowPresenterImpl: NSObject, ShipsSlideShowPresenter {
-        
+    
     private weak var view: ShipsSlideShowView?
     private var router: ShipsSlideShowRouter
     private let allShipsUseCase: AllShipsUseCase
@@ -66,9 +67,8 @@ final class ShipsSlideShowPresenterImpl: NSObject, ShipsSlideShowPresenter {
             switch result {
             case .success(let allShips):
                 self.allShips = allShips
-                print(allShips)
-            case .failure(let error):
-                print(error)
+            case .failure:
+                self.view?.alert(text: "Internet Connection Error!")
             }
         }
     }
@@ -84,15 +84,15 @@ extension ShipsSlideShowPresenterImpl {
     var numberOfSections: Int {
         return listDataSource.count
     }
-
+    
     func numberOfRows(in section: Int) -> Int {
         return listDataSource[section].cellModels.count
     }
-
+    
     func rowIdentifier(at indexPath: IndexPath) -> String {
         return listDataSource[indexPath.section].cellModels[indexPath.row].cellIdentifier
     }
-
+    
     func configure(row: ConfigurableCell, at indexPath: IndexPath) {
         row.configure(with: listDataSource[indexPath.section].cellModels[indexPath.row])
     }

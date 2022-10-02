@@ -66,7 +66,9 @@ extension ShipLaunchesAndMissionsViewController {
 // MARK: View Protocol Conformation
 extension ShipLaunchesAndMissionsViewController: ShipLaunchesAndMissionsView {
     func alert(text: String) {
-        openAlert(title: text, message: "", closeButtonTitle: "OK"){}
+        DispatchQueue.main.async { [weak self] in
+            self?.openAlert(title: text, message: "", closeButtonTitle: "OK"){}
+        }
     }
     
     

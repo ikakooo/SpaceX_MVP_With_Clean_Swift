@@ -108,6 +108,11 @@ extension ShipsSlideShowViewController {
 
 // MARK: View Protocol Conformation
 extension ShipsSlideShowViewController: ShipsSlideShowView {
+    func alert(text: String) {
+        DispatchQueue.main.async { [weak self] in
+            self?.openAlert(title: text, message: "", closeButtonTitle: "OK"){}
+        }
+    }
     
     func reloadList() {
         DispatchQueue.main.async { [weak self] in
