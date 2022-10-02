@@ -44,4 +44,18 @@ struct Links: Codable {
         case videoLink = "video_link"
         case youtubeID = "youtube_id"
     }
+    
+    func linksListAsDict()-> [String: String?] {
+        [
+            "Mission Patch" : missionPatch ,
+            "Reddit Campaign" : redditCampaign,
+            "Reddit Launch" : redditLaunch ,
+            "Reddit Recovery" : redditRecovery ,
+            "Reddit Media" : redditMedia ,
+            "Presskit" : presskit ,
+            "ArticleLink" : articleLink ,
+            "Wikipedia" : wikipedia ,
+            "Youtobe Video" : videoLink
+        ]
+    }
 }

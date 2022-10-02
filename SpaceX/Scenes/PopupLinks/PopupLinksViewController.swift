@@ -48,7 +48,7 @@ class PopupLinksViewController: UIViewController {
         super.viewDidLoad()
         shipNameLabel.text = mission?.missionName
         setupViews()
-        presenter.viewDidLoad()
+        presenter.viewDidLoad(allLinks: mission?.links?.linksListAsDict() ?? [:])
     }
 }
 

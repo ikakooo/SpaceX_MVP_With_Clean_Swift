@@ -12,7 +12,7 @@ protocol PopupLinksView: AnyObject {
 }
 
 protocol PopupLinksPresenter {
-    func viewDidLoad()
+    func viewDidLoad(allLinks: [String: String?])
     var numberOfSections: Int { get }
     func numberOfRows(in section: Int) -> Int
     func rowIdentifier(at indexPath: IndexPath) -> String
@@ -24,7 +24,7 @@ final class PopupLinksPresenterImpl:NSObject, PopupLinksPresenter {
     
     private weak var view: PopupLinksView?
     private var router: PopupLinksRouter
-
+    
     init(
         view: PopupLinksView,
         router: PopupLinksRouter
@@ -33,7 +33,7 @@ final class PopupLinksPresenterImpl:NSObject, PopupLinksPresenter {
         self.router = router
     }
     
-    var allLinks: [String] = [] {
+    var allLinks: [String: String?] = [:] {
         didSet {
             view?.reloadList()
         }
@@ -46,7 +46,12 @@ final class PopupLinksPresenterImpl:NSObject, PopupLinksPresenter {
     }
     
     private var linksSections: SectionModel {
-        let linksCells: [CellModel] = allLinks.map { link in LinksCell.ViewModel(link: link) }
+        let linksCells: [CellModel] = allLinks.compactMap { (name,link) in
+            if let link = link {
+                return   LinksCell.ViewModel(link: (name,link))
+            }
+            return nil
+        }
         
         return SectionModel(
             headerModel: nil,
@@ -54,8 +59,8 @@ final class PopupLinksPresenterImpl:NSObject, PopupLinksPresenter {
         )
     }
     
-    func viewDidLoad() {
-    
+    func viewDidLoad(allLinks: [String: String?]) {
+        self.allLinks = allLinks //["1":"","dsf1":"dsf","2":"","dsf4":"dsf"]
     }
 }
 
@@ -64,15 +69,15 @@ extension PopupLinksPresenterImpl {
     var numberOfSections: Int {
         return listDataSource.count
     }
-
+    
     func numberOfRows(in section: Int) -> Int {
         return listDataSource[section].cellModels.count
     }
-
+    
     func rowIdentifier(at indexPath: IndexPath) -> String {
         return listDataSource[indexPath.section].cellModels[indexPath.row].cellIdentifier
     }
-
+    
     func configure(row: ConfigurableCell, at indexPath: IndexPath) {
         row.configure(with: listDataSource[indexPath.section].cellModels[indexPath.row])
     }
