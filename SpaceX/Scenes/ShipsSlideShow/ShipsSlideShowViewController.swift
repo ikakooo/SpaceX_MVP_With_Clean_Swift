@@ -69,6 +69,7 @@ class ShipsSlideShowViewController: UIViewController {
     @IBAction func restartButtonTapAction(_ sender: Any) {
         UIView.animate(withDuration: 0.5, animations: {
             self.slideShowCollectionView?.contentOffset.x = 0
+            self.pageControler.currentPageIndex = 0
         })
         speedLabel.text = "Speed: \(String(format: "%.1f", 1.0)) X"
         if isPlaying { startTimer(speed: 1 ) }
@@ -136,6 +137,7 @@ extension ShipsSlideShowViewController: UICollectionViewDelegate, UICollectionVi
         let dequeued = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
         let cell = dequeued as! ConfigurableCell
         presenter.configure(row: cell, at: indexPath)
+        dequeued.gridAnimationCell(indexPath: indexPath)
         return dequeued
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
