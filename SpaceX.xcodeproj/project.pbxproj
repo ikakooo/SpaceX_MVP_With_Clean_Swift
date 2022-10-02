@@ -51,6 +51,13 @@
 		3BD2EAA828E9B95C004957FC /* MissionEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2EAA628E9B95C004957FC /* MissionEmptyCell.swift */; };
 		3BD2EAA928E9B95C004957FC /* MissionEmptyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD2EAA728E9B95C004957FC /* MissionEmptyCell.xib */; };
 		3BD2EAAD28E9C082004957FC /* DialogAlertsForActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2EAAC28E9C082004957FC /* DialogAlertsForActions.swift */; };
+		3BD2EAB128E9EFF1004957FC /* PopupLinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2EAAF28E9EFF1004957FC /* PopupLinksViewController.swift */; };
+		3BD2EAB228E9EFF1004957FC /* PopupLinksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD2EAB028E9EFF1004957FC /* PopupLinksViewController.xib */; };
+		3BD2EAB428EA04BC004957FC /* PopupLinksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2EAB328EA04BC004957FC /* PopupLinksPresenter.swift */; };
+		3BD2EAB628EA04DE004957FC /* PopupLinksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2EAB528EA04DE004957FC /* PopupLinksRouter.swift */; };
+		3BD2EAB828EA04F3004957FC /* PopupLinksConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2EAB728EA04F3004957FC /* PopupLinksConfigurator.swift */; };
+		3BD2EABC28EA0C6C004957FC /* LinksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2EABA28EA0C6C004957FC /* LinksCell.swift */; };
+		3BD2EABD28EA0C6C004957FC /* LinksCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD2EABB28EA0C6C004957FC /* LinksCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +126,13 @@
 		3BD2EAA628E9B95C004957FC /* MissionEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionEmptyCell.swift; sourceTree = "<group>"; };
 		3BD2EAA728E9B95C004957FC /* MissionEmptyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MissionEmptyCell.xib; sourceTree = "<group>"; };
 		3BD2EAAC28E9C082004957FC /* DialogAlertsForActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogAlertsForActions.swift; sourceTree = "<group>"; };
+		3BD2EAAF28E9EFF1004957FC /* PopupLinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupLinksViewController.swift; sourceTree = "<group>"; };
+		3BD2EAB028E9EFF1004957FC /* PopupLinksViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupLinksViewController.xib; sourceTree = "<group>"; };
+		3BD2EAB328EA04BC004957FC /* PopupLinksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupLinksPresenter.swift; sourceTree = "<group>"; };
+		3BD2EAB528EA04DE004957FC /* PopupLinksRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupLinksRouter.swift; sourceTree = "<group>"; };
+		3BD2EAB728EA04F3004957FC /* PopupLinksConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupLinksConfigurator.swift; sourceTree = "<group>"; };
+		3BD2EABA28EA0C6C004957FC /* LinksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksCell.swift; sourceTree = "<group>"; };
+		3BD2EABB28EA0C6C004957FC /* LinksCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinksCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +242,7 @@
 			children = (
 				3BA00E4C28DA2BD4009A1C78 /* ShipsSlideShow */,
 				3BA00E5128DA33FF009A1C78 /* ShipLaunchesAndMissions */,
+				3BD2EAAE28E9EFC3004957FC /* PopupLinks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -400,6 +415,28 @@
 			path = Mission;
 			sourceTree = "<group>";
 		};
+		3BD2EAAE28E9EFC3004957FC /* PopupLinks */ = {
+			isa = PBXGroup;
+			children = (
+				3BD2EAB928EA0C49004957FC /* Cells */,
+				3BD2EAB028E9EFF1004957FC /* PopupLinksViewController.xib */,
+				3BD2EAAF28E9EFF1004957FC /* PopupLinksViewController.swift */,
+				3BD2EAB328EA04BC004957FC /* PopupLinksPresenter.swift */,
+				3BD2EAB528EA04DE004957FC /* PopupLinksRouter.swift */,
+				3BD2EAB728EA04F3004957FC /* PopupLinksConfigurator.swift */,
+			);
+			path = PopupLinks;
+			sourceTree = "<group>";
+		};
+		3BD2EAB928EA0C49004957FC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3BD2EABA28EA0C6C004957FC /* LinksCell.swift */,
+				3BD2EABB28EA0C6C004957FC /* LinksCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -505,9 +542,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BA00E5528DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.xib in Resources */,
+				3BD2EAB228E9EFF1004957FC /* PopupLinksViewController.xib in Resources */,
 				3BA00E1C28D992C3009A1C78 /* LaunchScreen.storyboard in Resources */,
 				3BA5928B28E6C9620057CA61 /* MissionCell.xib in Resources */,
 				3BA00E1928D992C3009A1C78 /* Assets.xcassets in Resources */,
+				3BD2EABD28EA0C6C004957FC /* LinksCell.xib in Resources */,
 				3BD2EAA928E9B95C004957FC /* MissionEmptyCell.xib in Resources */,
 				3BA00E5028DA2C55009A1C78 /* ShipsSlideShowViewController.xib in Resources */,
 				3BC1FDA728DAF50A0041A2AE /* ShipSlideCell.xib in Resources */,
@@ -539,11 +578,15 @@
 				3BA00E0D28D992C2009A1C78 /* AppDelegate.swift in Sources */,
 				3BD2EAA028E8D8ED004957FC /* LauncheOrMissionModel.swift in Sources */,
 				3BA00E0F28D992C2009A1C78 /* SceneDelegate.swift in Sources */,
+				3BD2EAB628EA04DE004957FC /* PopupLinksRouter.swift in Sources */,
+				3BD2EAB828EA04F3004957FC /* PopupLinksConfigurator.swift in Sources */,
 				3BC1FDA628DAF50A0041A2AE /* ShipSlideCell.swift in Sources */,
 				3BA00E6228DA6E45009A1C78 /* AllShipsModel.swift in Sources */,
 				3BD2EAAD28E9C082004957FC /* DialogAlertsForActions.swift in Sources */,
 				3BC1FDBA28DB8C240041A2AE /* ShipLaunchesAndMissionsPresenter.swift in Sources */,
 				3BA5928A28E6C9620057CA61 /* MissionCell.swift in Sources */,
+				3BD2EABC28EA0C6C004957FC /* LinksCell.swift in Sources */,
+				3BD2EAB128E9EFF1004957FC /* PopupLinksViewController.swift in Sources */,
 				3BD2EA9E28E8D5C2004957FC /* ShipLaunchesAndMissionsGateway.swift in Sources */,
 				3BD2EAA828E9B95C004957FC /* MissionEmptyCell.swift in Sources */,
 				3BA00E4F28DA2C55009A1C78 /* ShipsSlideShowViewController.swift in Sources */,
@@ -551,6 +594,7 @@
 				3BC1FDAA28DAFD2A0041A2AE /* UICollectionView+Extension.swift in Sources */,
 				3BA00E6028DA6D23009A1C78 /* AllShipsGateway.swift in Sources */,
 				3BA00E4928D997CF009A1C78 /* Fetcher.swift in Sources */,
+				3BD2EAB428EA04BC004957FC /* PopupLinksPresenter.swift in Sources */,
 				3BA5929128E6CC080057CA61 /* UITableView+Extension.swift in Sources */,
 				3BA00E5E28DA6BBC009A1C78 /* Constants.swift in Sources */,
 				3BBA529528DC52B100B1F8B6 /* CustomPageControl.swift in Sources */,

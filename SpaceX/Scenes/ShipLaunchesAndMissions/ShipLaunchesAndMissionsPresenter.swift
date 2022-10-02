@@ -21,7 +21,7 @@ protocol ShipLaunchesAndMissionsPresenter {
     func configure(row: ConfigurableCell, at indexPath: IndexPath)
 }
 
-final class ShipLaunchesAndMissionsPresenterImpl: NSObject, ShipLaunchesAndMissionsPresenter {
+final class ShipLaunchesAndMissionsPresenterImpl: NSObject, ShipLaunchesAndMissionsPresenter, MissionCellDelegate {
     
     private weak var view: ShipLaunchesAndMissionsView?
     private var router: ShipLaunchesAndMissionsRouter
@@ -57,7 +57,7 @@ final class ShipLaunchesAndMissionsPresenterImpl: NSObject, ShipLaunchesAndMissi
     }
     
     private var missionSections: SectionModel {
-        var missionCells: [CellModel] = allMissionsWithDetails.map { missionModel in MissionCell.ViewModel(mission: missionModel) }
+        var missionCells: [CellModel] = allMissionsWithDetails.map { missionModel in MissionCell.ViewModel(mission: missionModel, delegate: self) }
         
         if missionCells.isEmpty {
             missionCells = [MissionEmptyCell.ViewModel()]
@@ -92,6 +92,9 @@ final class ShipLaunchesAndMissionsPresenterImpl: NSObject, ShipLaunchesAndMissi
         self.allmissions = missions.filter({($0.name?.containsIgnoringCase(find: name ?? "") ?? false)})
     }
     
+    func linksButtonOnClick(mission: LauncheOrMissionModel) {
+        router.showPopupLinks(with: mission)
+    }
 }
 
 extension ShipLaunchesAndMissionsPresenterImpl {

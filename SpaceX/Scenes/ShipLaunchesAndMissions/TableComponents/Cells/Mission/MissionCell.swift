@@ -7,23 +7,27 @@
 
 import UIKit
 
+protocol MissionCellDelegate: AnyObject {
+    func  linksButtonOnClick(mission: LauncheOrMissionModel)
+}
+
 class MissionCell: UITableViewCell {
-    @IBOutlet weak var missionNameLabel: UILabel!
-    @IBOutlet weak var launchYearLabel: UILabel!
-    @IBOutlet weak var detailLabel: UILabel!
-    @IBOutlet weak var mainView: UIView!
+    @IBOutlet private weak var missionNameLabel: UILabel!
+    @IBOutlet private weak var launchYearLabel: UILabel!
+    @IBOutlet private weak var detailLabel: UILabel!
+    @IBOutlet private weak var mainView: UIView!
+    
+    private var mission: LauncheOrMissionModel?
+    weak var delegate: MissionCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         mainView.cornerRadiuse(point: 10)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    @IBAction func linksButtonOnClick(_ sender: Any) {
+    
+    @IBAction private func linksButtonOnClick(_ sender: Any) {
+        guard let mission = mission else { return }
+        delegate?.linksButtonOnClick(mission: mission)
     }
     
 }
@@ -32,6 +36,8 @@ extension MissionCell: ConfigurableCell {
     
     func configure(with model: CellModel) {
         guard let model = model as? ViewModel else { return }
+        mission = model.mission
+        delegate = model.delegate
         missionNameLabel.text = model.mission.missionName
         launchYearLabel.text = model.mission.launchYear
         detailLabel.text = model.mission.details?.shorted(to: 50)
@@ -47,6 +53,8 @@ extension MissionCell {
             return String(describing: MissionCell.self)
         }
         let mission: LauncheOrMissionModel
+        
+        weak var delegate: MissionCellDelegate?
     }
     
 }
