@@ -24,8 +24,8 @@ class ShipsSlideShowViewController: UIViewController {
     
     private var  bacgroundView: GradientView = {
         let view = GradientView()
-        view.matrixRange = 0...10
-        view.persent = 9
+        view.matrixRange = 0...5
+        view.persent = 4
         view.startColor = .tintColor
         view.endColor = .black
         
@@ -49,7 +49,7 @@ class ShipsSlideShowViewController: UIViewController {
         
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.registerNib(class: ShipSlideCell.self)
+        collectionView.registerClass(class: ShipSlideCell.self)
         collectionView.isPagingEnabled = true
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -100,11 +100,13 @@ class ShipsSlideShowViewController: UIViewController {
         return button
     }()
     
+    private let pageControlSlidesEmptySpace = UIView()
+    
     private var pageControler: CustomPageControl = {
         let pageControl = CustomPageControl()
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.unselectedItemColor =  .gray
-        pageControl.selectedItemColor = .blue
+        pageControl.selectedItemColor = .tintColor
         
         return pageControl
     }()
@@ -158,11 +160,12 @@ class ShipsSlideShowViewController: UIViewController {
         configurator.configure(self)
     }
     
-    private func setupViews(){
+    private func setUpViews(){
         view = bacgroundView
         
         view.addSubview(contentView)
         contentView.addArrangedSubview(slideShowCollectionView)
+        contentView.addArrangedSubview(pageControlSlidesEmptySpace)
         contentView.addArrangedSubview(pageControler)
         contentView.addArrangedSubview(emptySpace)
         contentView.addArrangedSubview(speedLabel)
@@ -185,13 +188,14 @@ class ShipsSlideShowViewController: UIViewController {
         
     }
     
-    private func setupConstraints(){
+    private func setUpConstraints(){
         NSLayoutConstraint.activate([
             contentView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             contentView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor),
             contentView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor),
             contentView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
             emptySpace.heightAnchor.constraint(equalToConstant: 20),
+            pageControlSlidesEmptySpace.heightAnchor.constraint(equalToConstant: 20),
             speedSlider.topAnchor.constraint(equalTo: speedSliderContainer.topAnchor),
             speedSlider.bottomAnchor.constraint(equalTo: speedSliderContainer.bottomAnchor),
             speedSlider.leftAnchor.constraint(equalTo: speedSliderContainer.leftAnchor, constant: 20),
@@ -208,8 +212,8 @@ extension ShipsSlideShowViewController {
     
     override func loadView() {
         
-        setupViews()
-        setupConstraints()
+        setUpViews()
+        setUpConstraints()
     }
     
     override func viewDidLoad() {

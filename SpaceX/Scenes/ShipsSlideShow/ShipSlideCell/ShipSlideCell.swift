@@ -19,14 +19,143 @@ struct ShipSlideCell_Previews: PreviewProvider {
 #endif
 
 class ShipSlideCell: UICollectionViewCell {
-    @IBOutlet private weak var shipNameLabel: UILabel!
-    @IBOutlet private weak var shipImage: UIImageView!
-    @IBOutlet private weak var shipTypeLabel: UILabel!
-    @IBOutlet private weak var shipPortLabel: UILabel!
-    @IBOutlet private weak var cellContentView: UIView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    // MARK: - Views
+    
+    private var  cellContentView: GradientView = {
+        let view = GradientView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.matrixRange = 0...5
+        view.persent = 4
+        view.startColor = .black
+        view.endColor = .tintColor
+        view.cornerRadiuse(point: 20 )
+        view.clipsToBounds = true
+        view.backgroundColor = .green
+        return view
+    }()
+    
+    private var shipNameLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.textColor = .tintColor
+        label.font = .boldSystemFont(ofSize: 26)
+        label.text = "American Champion"
+        return label
+    }()
+    
+    private var topLineView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .tintColor
+        view.cornerRadiuse(point: 2 )
+        
+        return view
+    }()
+    
+    private var shipTypeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.textColor = .black
+        label.font = .boldSystemFont(ofSize: 40)
+        
+        label.text = "Tug"
+        label.setContentCompressionResistancePriority(UILayoutPriority.defaultHigh, for: .vertical)
+        return label
+    }()
+    
+    private var shipPortLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.textColor = .black
+        label.font = .boldSystemFont(ofSize: 25)
+        
+        label.setContentCompressionResistancePriority(UILayoutPriority.defaultHigh, for: .vertical)
+        return label
+    }()
+    
+    
+    private var shipImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "placeholderIMG")
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    
+    // must call super
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUpViews()
+        setUpConstraints()
+
+    }
+
+    // we have to implement this initializer, but will only ever use this class programmatically
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+
+    }
+    
+    private func setUpViews(){
+        contentView.addSubview(cellContentView)
+        cellContentView.addSubview(shipNameLabel)
+        cellContentView.addSubview(topLineView)
+        cellContentView.addSubview(shipImage)
+        cellContentView.addSubview(shipTypeLabel)
+        cellContentView.addSubview(shipPortLabel)
+        
+        
+        
+        
+        
+       // contentView.dropShadow()
+    }
+    
+    
+    private func setUpConstraints(){
+       // contentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            cellContentView.topAnchor.constraint(equalTo: self.topAnchor),
+            cellContentView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
+            cellContentView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
+            cellContentView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            shipNameLabel.topAnchor.constraint(equalTo: cellContentView.topAnchor, constant: 10),
+            shipNameLabel.leftAnchor.constraint(equalTo: cellContentView.leftAnchor),
+            shipNameLabel.rightAnchor.constraint(equalTo: cellContentView.rightAnchor),
+            
+            topLineView.topAnchor.constraint(equalTo: shipNameLabel.bottomAnchor),
+            topLineView.leftAnchor.constraint(equalTo: cellContentView.leftAnchor, constant: 10),
+            topLineView.rightAnchor.constraint(equalTo: cellContentView.rightAnchor, constant: -10),
+            topLineView.heightAnchor.constraint(equalToConstant: 4),
+            
+            shipImage.topAnchor.constraint(equalTo: topLineView.bottomAnchor, constant: 10),
+            shipImage.leftAnchor.constraint(equalTo: cellContentView.leftAnchor, constant:  10),
+            shipImage.rightAnchor.constraint(equalTo: cellContentView.rightAnchor, constant: -10),
+            
+            shipTypeLabel.topAnchor.constraint(equalTo: shipImage.bottomAnchor, constant: 40),
+            shipTypeLabel.leftAnchor.constraint(equalTo: cellContentView.leftAnchor, constant:  10),
+            shipTypeLabel.rightAnchor.constraint(equalTo: cellContentView.rightAnchor, constant: -10),
+            shipTypeLabel.heightAnchor.constraint(equalToConstant: 40),
+            
+            shipPortLabel.topAnchor.constraint(equalTo: shipTypeLabel.bottomAnchor, constant: 40),
+            shipPortLabel.leftAnchor.constraint(equalTo: cellContentView.leftAnchor, constant:  10),
+            shipPortLabel.rightAnchor.constraint(equalTo: cellContentView.rightAnchor, constant: -10),
+            shipPortLabel.bottomAnchor.constraint(equalTo: cellContentView.bottomAnchor, constant:  -10),
+            shipPortLabel.heightAnchor.constraint(equalToConstant: 30)
+           
+        ])
     }
     
 }
@@ -40,8 +169,7 @@ extension ShipSlideCell: ConfigurableCell {
         shipPortLabel.text = model.ship.homePort?.rawValue
         shipImage.loadFrom(URLAddress: model.ship.image ?? Constants.placeholderIMG)
         shipImage.cornerRadiuse(point: 10 )
-        cellContentView.cornerRadiuse(point: 20 )
-        cellContentView.dropShadow()
+
     }
     
 }

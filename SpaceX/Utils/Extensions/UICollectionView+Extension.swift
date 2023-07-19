@@ -9,6 +9,10 @@ import UIKit
 
 extension UICollectionView {
     
+    func registerClass<T: UICollectionViewCell>(class: T.Type) {
+        register(T.self, forCellWithReuseIdentifier: T.identifier)
+    }
+    
     func registerNib<T: UICollectionViewCell>(class: T.Type) {
         register(T.nib, forCellWithReuseIdentifier: T.identifier)
     }
