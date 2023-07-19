@@ -72,7 +72,7 @@ class ShipSlideCell: UICollectionViewCell {
         label.textAlignment = .center
         label.textColor = .black
         label.font = .boldSystemFont(ofSize: 25)
-        
+        label.text = "Port Of Los Angeless"
         label.setContentCompressionResistancePriority(UILayoutPriority.defaultHigh, for: .vertical)
         return label
     }()
@@ -83,6 +83,7 @@ class ShipSlideCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "placeholderIMG")
         imageView.contentMode = .scaleAspectFill
+        imageView.cornerRadiuse(point: 10 )
         return imageView
     }()
     
@@ -144,12 +145,12 @@ class ShipSlideCell: UICollectionViewCell {
             shipImage.leftAnchor.constraint(equalTo: cellContentView.leftAnchor, constant:  10),
             shipImage.rightAnchor.constraint(equalTo: cellContentView.rightAnchor, constant: -10),
             
-            shipTypeLabel.topAnchor.constraint(equalTo: shipImage.bottomAnchor, constant: 40),
+            shipTypeLabel.topAnchor.constraint(greaterThanOrEqualTo: shipImage.bottomAnchor, constant: 10),
             shipTypeLabel.leftAnchor.constraint(equalTo: cellContentView.leftAnchor, constant:  10),
             shipTypeLabel.rightAnchor.constraint(equalTo: cellContentView.rightAnchor, constant: -10),
             shipTypeLabel.heightAnchor.constraint(equalToConstant: 40),
             
-            shipPortLabel.topAnchor.constraint(equalTo: shipTypeLabel.bottomAnchor, constant: 40),
+            shipPortLabel.topAnchor.constraint(equalTo: shipTypeLabel.bottomAnchor, constant: 10),
             shipPortLabel.leftAnchor.constraint(equalTo: cellContentView.leftAnchor, constant:  10),
             shipPortLabel.rightAnchor.constraint(equalTo: cellContentView.rightAnchor, constant: -10),
             shipPortLabel.bottomAnchor.constraint(equalTo: cellContentView.bottomAnchor, constant:  -10),
@@ -167,8 +168,7 @@ extension ShipSlideCell: ConfigurableCell {
         shipNameLabel.text = model.ship.shipName
         shipTypeLabel.text = model.ship.shipType?.rawValue
         shipPortLabel.text = model.ship.homePort?.rawValue
-        shipImage.loadFrom(URLAddress: model.ship.image ?? Constants.placeholderIMG)
-        shipImage.cornerRadiuse(point: 10 )
+        shipImage.loadFrom(URLAddress: model.ship.image)
 
     }
     
