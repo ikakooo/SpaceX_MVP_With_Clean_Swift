@@ -19,7 +19,6 @@
 		3BA00E3328D992C3009A1C78 /* SpaceXUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E3228D992C3009A1C78 /* SpaceXUITestsLaunchTests.swift */; };
 		3BA00E4928D997CF009A1C78 /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E4828D997CF009A1C78 /* Fetcher.swift */; };
 		3BA00E4F28DA2C55009A1C78 /* ShipsSlideShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E4D28DA2C55009A1C78 /* ShipsSlideShowViewController.swift */; };
-		3BA00E5028DA2C55009A1C78 /* ShipsSlideShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA00E4E28DA2C55009A1C78 /* ShipsSlideShowViewController.xib */; };
 		3BA00E5428DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E5228DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.swift */; };
 		3BA00E5528DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA00E5328DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.xib */; };
 		3BA00E5728DA49EB009A1C78 /* ShipsSlideShowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA00E5628DA49EB009A1C78 /* ShipsSlideShowPresenter.swift */; };
@@ -59,6 +58,7 @@
 		3BD2EAB828EA04F3004957FC /* PopupLinksConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2EAB728EA04F3004957FC /* PopupLinksConfigurator.swift */; };
 		3BD2EABC28EA0C6C004957FC /* LinksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2EABA28EA0C6C004957FC /* LinksCell.swift */; };
 		3BD2EABD28EA0C6C004957FC /* LinksCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD2EABB28EA0C6C004957FC /* LinksCell.xib */; };
+		A98118F22A67D93000B4EB51 /* UIKitPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98118F12A67D93000B4EB51 /* UIKitPreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +95,6 @@
 		3BA00E3228D992C3009A1C78 /* SpaceXUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3BA00E4828D997CF009A1C78 /* Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
 		3BA00E4D28DA2C55009A1C78 /* ShipsSlideShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipsSlideShowViewController.swift; sourceTree = "<group>"; };
-		3BA00E4E28DA2C55009A1C78 /* ShipsSlideShowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShipsSlideShowViewController.xib; sourceTree = "<group>"; };
 		3BA00E5228DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipLaunchesAndMissionsViewController.swift; sourceTree = "<group>"; };
 		3BA00E5328DA3422009A1C78 /* ShipLaunchesAndMissionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShipLaunchesAndMissionsViewController.xib; sourceTree = "<group>"; };
 		3BA00E5628DA49EB009A1C78 /* ShipsSlideShowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipsSlideShowPresenter.swift; sourceTree = "<group>"; };
@@ -135,6 +134,7 @@
 		3BD2EAB728EA04F3004957FC /* PopupLinksConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupLinksConfigurator.swift; sourceTree = "<group>"; };
 		3BD2EABA28EA0C6C004957FC /* LinksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksCell.swift; sourceTree = "<group>"; };
 		3BD2EABB28EA0C6C004957FC /* LinksCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinksCell.xib; sourceTree = "<group>"; };
+		A98118F12A67D93000B4EB51 /* UIKitPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +217,7 @@
 				3BC1FDA828DAFD150041A2AE /* Extensions */,
 				3BA00E4028D9970F009A1C78 /* Network */,
 				3BC1FDAD28DAFEC30041A2AE /* CellConfiguration.swift */,
+				A98118F12A67D93000B4EB51 /* UIKitPreview.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -319,7 +320,6 @@
 			isa = PBXGroup;
 			children = (
 				3BC1FDA328DAF4E90041A2AE /* ShipSlideCell */,
-				3BA00E4E28DA2C55009A1C78 /* ShipsSlideShowViewController.xib */,
 				3BA00E4D28DA2C55009A1C78 /* ShipsSlideShowViewController.swift */,
 				3BA00E5628DA49EB009A1C78 /* ShipsSlideShowPresenter.swift */,
 				3BA00E5828DA4A34009A1C78 /* ShipsSlideShowRouter.swift */,
@@ -551,7 +551,6 @@
 				3BA00E1928D992C3009A1C78 /* Assets.xcassets in Resources */,
 				3BD2EABD28EA0C6C004957FC /* LinksCell.xib in Resources */,
 				3BD2EAA928E9B95C004957FC /* MissionEmptyCell.xib in Resources */,
-				3BA00E5028DA2C55009A1C78 /* ShipsSlideShowViewController.xib in Resources */,
 				3BC1FDA728DAF50A0041A2AE /* ShipSlideCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -611,6 +610,7 @@
 				3BD2EAA528E8F46D004957FC /* FloatingLabelInput.swift in Sources */,
 				3BC1FDAC28DAFD7A0041A2AE /* UICollectionViewCell+Extension.swift in Sources */,
 				3BC1FDB828DB8BFD0041A2AE /* ShipLaunchesAndMissionsRouter.swift in Sources */,
+				A98118F22A67D93000B4EB51 /* UIKitPreview.swift in Sources */,
 				3BA00E5B28DA4A56009A1C78 /* ShipsSlideShowConfigurator.swift in Sources */,
 				3BA00E6428DA71F5009A1C78 /* AllShipsUseCase.swift in Sources */,
 				3BC1FDB428DB4CD90041A2AE /* UDManager.swift in Sources */,
@@ -800,7 +800,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ika.ikakooo.pro.SpaceX;
+				PRODUCT_BUNDLE_IDENTIFIER = ika.ikakooo.pro.SpaceXv2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -828,7 +828,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ika.ikakooo.pro.SpaceX;
+				PRODUCT_BUNDLE_IDENTIFIER = ika.ikakooo.pro.SpaceXv2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

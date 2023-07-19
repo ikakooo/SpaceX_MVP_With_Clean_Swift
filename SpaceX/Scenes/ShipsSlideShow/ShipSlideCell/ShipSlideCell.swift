@@ -7,6 +7,17 @@
 
 import UIKit
 
+#if canImport(SwiftUI) && DEBUG
+import SwiftUI
+
+struct ShipSlideCell_Previews: PreviewProvider {
+    static var previews: some View {
+        UIViewPreview{ ShipSlideCell() }
+    }
+}
+
+#endif
+
 class ShipSlideCell: UICollectionViewCell {
     @IBOutlet private weak var shipNameLabel: UILabel!
     @IBOutlet private weak var shipImage: UIImageView!

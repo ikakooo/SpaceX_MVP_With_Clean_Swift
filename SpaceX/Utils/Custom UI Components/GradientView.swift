@@ -37,6 +37,8 @@ final class GradientViewUIButton: UIButton {
 final class GradientView: UIView {
     @IBInspectable var startColor: UIColor = UIColor.clear
     @IBInspectable var endColor: UIColor = UIColor.clear
+    @IBInspectable var persent: CGFloat = 50
+    var matrixRange = 0...100
     
     override func draw(_ rect: CGRect) {
         let gradient: CAGradientLayer = CAGradientLayer()
@@ -44,7 +46,11 @@ final class GradientView: UIView {
                                 y: CGFloat(0),
                                 width: superview!.frame.size.width,
                                 height: superview!.frame.size.height)
-        gradient.colors = [startColor.cgColor, endColor.cgColor, endColor.cgColor]
+        gradient.colors = matrixRange.compactMap{
+            CGFloat($0) < persent ? startColor.cgColor : endColor.cgColor
+        }
+        
+        //[startColor.cgColor, endColor.cgColor, endColor.cgColor]
         gradient.zPosition = -1
         layer.addSublayer(gradient)
     }

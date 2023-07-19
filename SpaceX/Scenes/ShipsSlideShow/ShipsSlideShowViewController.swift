@@ -7,28 +7,148 @@
 
 import UIKit
 
+#if canImport(SwiftUI) && DEBUG
+import SwiftUI
+
+struct ShipsSlideShowViewController_Previews: PreviewProvider {
+    static var previews: some View {
+        UIViewControllerPreview{ ShipsSlideShowViewController() }
+    }
+}
+
+#endif
+
 class ShipsSlideShowViewController: UIViewController {
-    @IBOutlet private weak var slideShowCollectionView: UICollectionView!
-    @IBOutlet private weak var speedLabel: UILabel!
-    @IBOutlet private weak var speedSlider: UISlider!
-    @IBOutlet private weak var restartButton: UIButton!
-    @IBOutlet private weak var playPauseButton: UIButton!
-    @IBOutlet private weak var pageControler: CustomPageControl!
+    
+    // MARK: - Views
+    
+    private var  bacgroundView: GradientView = {
+        let view = GradientView()
+        view.matrixRange = 0...10
+        view.persent = 9
+        view.startColor = .tintColor
+        view.endColor = .black
+        
+        return view
+    }()
+    
+    private var contentView: UIStackView  = {
+        let vStack = UIStackView()
+        vStack.backgroundColor = .clear
+        vStack.axis = .vertical
+        vStack.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        return vStack
+    }()
+    
+    private var slideShowCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        layout.scrollDirection = .horizontal
+        
+        collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.registerNib(class: ShipSlideCell.self)
+        collectionView.isPagingEnabled = true
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return collectionView
+    }()
+    
+    private let emptySpace = UIView()
+    
+    private var speedLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Speed: 1.0 X"
+        label.textAlignment = .center
+        label.textColor = .tintColor
+        label.font = .boldSystemFont(ofSize: 17)
+        return label
+    }()
+    
+    private var speedSliderContainer: UIView = UIView()
+    
+    private var speedSlider: UISlider = {
+        let slider = UISlider()
+        slider.translatesAutoresizingMaskIntoConstraints = false
+        slider.value = 1
+        slider.minimumValue = 1
+        slider.maximumValue = 5
+        return slider
+    }()
+    
+    private var controlerButtonsContainer: UIStackView = {
+        let view = UIStackView()
+        view.distribution = .fillEqually
+        view.spacing = 40
+        return view
+    }()
+    
+    private var restartButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "repeat"), for: .normal)
+        return button
+    }()
+    
+    private var playPauseButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "play"), for: .normal)
+        return button
+    }()
+    
+    private var pageControler: CustomPageControl = {
+        let pageControl = CustomPageControl()
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        pageControl.unselectedItemColor =  .gray
+        pageControl.selectedItemColor = .blue
+        
+        return pageControl
+    }()
+    
+    // MARK: - Variables
     
     var presenter: ShipsSlideShowPresenter!
     var timer: Timer? = Timer()
     var isPlaying = false
     
-    // MARK: - Object lifecycle
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    // MARK: - Init
+    init() {
+        super.init(nibName: nil, bundle: nil)
         setupCleanSwift()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupCleanSwift()
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    // MARK: Actions
+    
+    @objc func speedSliderValueChange(_ sender: UISlider) {
+        speedLabel.text = "Speed: \(String(format: "%.1f", sender.value)) X"
+        startTimer(speed: sender.value)
+    }
+    
+    @objc func playPauseButtonTapAction(_ sender: Any) {
+        if isPlaying {
+            stopTimer()
+        } else {
+            startTimer(speed: speedSlider.value )
+        }
+    }
+    
+    @objc func restartButtonTapAction(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.slideShowCollectionView.contentOffset.x = 0
+            self.pageControler.currentPageIndex = 0
+        })
+        speedLabel.text = "Speed: \(String(format: "%.1f", 1.0)) X"
+        if isPlaying { startTimer(speed: 1 ) }
+        speedSlider.value = 1.0
     }
     
     // MARK: - Setup
@@ -39,41 +159,45 @@ class ShipsSlideShowViewController: UIViewController {
     }
     
     private func setupViews(){
+        view = bacgroundView
+        
+        view.addSubview(contentView)
+        contentView.addArrangedSubview(slideShowCollectionView)
+        contentView.addArrangedSubview(pageControler)
+        contentView.addArrangedSubview(emptySpace)
+        contentView.addArrangedSubview(speedLabel)
+        contentView.addArrangedSubview(speedSliderContainer)
+        speedSliderContainer.addSubview(speedSlider)
+        contentView.addArrangedSubview(controlerButtonsContainer)
+        
+        controlerButtonsContainer.addArrangedSubview(restartButton)
+        controlerButtonsContainer.addArrangedSubview(playPauseButton)
+        
+        
+        
         slideShowCollectionView.dataSource = self
         slideShowCollectionView.delegate = self
-        slideShowCollectionView.isPagingEnabled = true
-        slideShowCollectionView.showsHorizontalScrollIndicator = false
-        slideShowCollectionView.registerNib(class: ShipSlideCell.self)
-        pageControler.unselectedItemColor =  .gray
-        pageControler.selectedItemColor = .blue
-        presenter.pageDidChanged = { pageIndex in
-            self.pageControler.currentPageIndex = pageIndex
-        }
+        
+        
+        speedSlider.addTarget(self, action: #selector(speedSliderValueChange(_:)), for: .valueChanged)
+        restartButton.addTarget(self, action: #selector(restartButtonTapAction(_:)), for: .touchUpInside)
+        playPauseButton.addTarget(self, action: #selector(playPauseButtonTapAction(_:)), for: .touchUpInside)
+        
     }
     
-    // MARK: Actions
-    
-    @IBAction func speedSliderValueChange(_ sender: UISlider) {
-        speedLabel.text = "Speed: \(String(format: "%.1f", sender.value)) X"
-        startTimer(speed: sender.value)
-    }
-    
-    @IBAction func playPauseButtonTapAction(_ sender: Any) {
-        if isPlaying {
-            stopTimer()
-        } else {
-            startTimer(speed: speedSlider.value )
-        }
-    }
-    
-    @IBAction func restartButtonTapAction(_ sender: Any) {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.slideShowCollectionView?.contentOffset.x = 0
-            self.pageControler.currentPageIndex = 0
-        })
-        speedLabel.text = "Speed: \(String(format: "%.1f", 1.0)) X"
-        if isPlaying { startTimer(speed: 1 ) }
-        speedSlider.value = 1.0
+    private func setupConstraints(){
+        NSLayoutConstraint.activate([
+            contentView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            contentView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor),
+            contentView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor),
+            contentView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
+            emptySpace.heightAnchor.constraint(equalToConstant: 20),
+            speedSlider.topAnchor.constraint(equalTo: speedSliderContainer.topAnchor),
+            speedSlider.bottomAnchor.constraint(equalTo: speedSliderContainer.bottomAnchor),
+            speedSlider.leftAnchor.constraint(equalTo: speedSliderContainer.leftAnchor, constant: 20),
+            speedSlider.rightAnchor.constraint(equalTo: speedSliderContainer.rightAnchor, constant: -20),
+            controlerButtonsContainer.heightAnchor.constraint(equalToConstant: 50),
+        ])
     }
     
 }
@@ -82,9 +206,14 @@ class ShipsSlideShowViewController: UIViewController {
 // MARK: UIViewController Lifecycle
 extension ShipsSlideShowViewController {
     
+    override func loadView() {
+        
+        setupViews()
+        setupConstraints()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
         presenter.viewDidLoad()
     }
     
@@ -177,26 +306,22 @@ extension ShipsSlideShowViewController {
     
     @objc func scrollAutomatically(_ timer1: Timer) {
         
-        if let coll  = slideShowCollectionView {
-            for cell in coll.visibleCells {
-                let indexPath: IndexPath? = coll.indexPath(for: cell)
-                if ((indexPath?.row)!  < presenter.numberOfRows(in: 0) - 1){
-                    let indexPath1: IndexPath?
-                    indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
-                    
-                    coll.scrollToItem(at: indexPath1!, at: .centeredHorizontally, animated: true)
-                    pageControler.currentPageIndex = indexPath1!.row
-                }
-                else{
-                    let indexPath1: IndexPath?
-                    indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
-                    coll.scrollToItem(at: indexPath1!, at: .right, animated: true)
-                    pageControler.currentPageIndex = indexPath1!.row
-                }
+        for cell in slideShowCollectionView.visibleCells {
+            let indexPath: IndexPath? = slideShowCollectionView.indexPath(for: cell)
+            if ((indexPath?.row)!  < presenter.numberOfRows(in: 0) - 1){
+                let indexPath1: IndexPath?
+                indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
                 
+                slideShowCollectionView.scrollToItem(at: indexPath1!, at: .centeredHorizontally, animated: true)
+                pageControler.currentPageIndex = indexPath1!.row
+            }
+            else{
+                let indexPath1: IndexPath?
+                indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
+                slideShowCollectionView.scrollToItem(at: indexPath1!, at: .right, animated: true)
+                pageControler.currentPageIndex = indexPath1!.row
             }
         }
-        
     }
     
     private func stopTimer(){
